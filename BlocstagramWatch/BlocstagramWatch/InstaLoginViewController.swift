@@ -29,29 +29,7 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(requestObj)
     }
 
-    
-    
-    
-    
-    
-    
-//    - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-//    NSString *urlString = request.URL.absoluteString;
-//    if ([urlString hasPrefix:[self redirectURI]]) {
-//    // This contains our auth token
-    
-    
-//    NSRange rangeOfAccessTokenParameter = [urlString rangeOfString:@"access_token="];
-//    NSUInteger indexOfTokenStarting = rangeOfAccessTokenParameter.location + rangeOfAccessTokenParameter.length;
-//    NSString *accessToken = [urlString substringFromIndex:indexOfTokenStarting];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:BLCLoginViewControllerDidGetAccessTokenNotification object:accessToken];
-//    return NO;
-//    }
-//    
-//    return YES;
-//    }
-    
-    
+      
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
 
         var urlString = request.URL!.absoluteString!
