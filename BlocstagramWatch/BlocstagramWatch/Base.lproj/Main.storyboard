@@ -137,7 +137,7 @@
         <!--Insta Login View Controller-->
         <scene sceneID="TtF-un-QME">
             <objects>
-                <viewController id="Efh-yz-i5D" customClass="InstaLoginViewController" customModule="BlocstagramWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstaLoginVC" id="Efh-yz-i5D" customClass="InstaLoginViewController" customModule="BlocstagramWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WVq-YN-6Xb"/>
                         <viewControllerLayoutGuide type="bottom" id="gbD-8h-HND"/>

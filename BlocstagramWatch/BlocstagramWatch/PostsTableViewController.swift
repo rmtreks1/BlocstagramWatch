@@ -11,6 +11,35 @@ import UIKit
 class PostsTableViewController: UITableViewController {
     
     var images = [UIImage]()
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        println("view will appear")
+        checkAndSetLoginIfNeeded()
+    }
+    
+    
+    
+    func checkAndSetLoginIfNeeded (){
+        if DataSource.sharedInstance.accessToken == nil {
+            println("no access token - need one")
+            
+            
+            
+            let instaLoginVC = self.storyboard!.instantiateViewControllerWithIdentifier("InstaLoginVC") as! UIViewController
+            self.presentViewController(instaLoginVC, animated: true, completion: nil)
+            
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
