@@ -9,9 +9,25 @@
 import UIKit
 
 class PostsTableViewController: UITableViewController {
+    
+    var images = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // sample images to test
+        for var i = 1; i <= 10; i++ {
+            let imageName = "\(i).jpg"
+            let image = UIImage(named: imageName)
+            if ((image) != nil) {
+                self.images.append(image!)
+            }
+            
+            println("number of images \(self.images.count)")
+        }
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,7 +46,7 @@ class PostsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 2
+        return self.images.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,23 +54,6 @@ class PostsTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return 1
     }
-    
-//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        
-//        let headerCell = PostsHeaderTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier:"HeaderCell")
-//        
-////        let headerCell = tableView.dequeueReusableHeaderFooterViewWithIdentifier("HeaderCell") as? PostsHeaderTableViewCell
-//        
-////        if (headerCell == nil) {
-////            headerCell = PostsHeaderTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier:"HeaderCell")
-////        }
-////        
-////        headerCell.profileImage.image = UIImage(named: "TestImage.JPG")
-//        headerCell.usernameLabel.text = "test"
-//
-//        return headerCell
-//    }
-
     
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -84,7 +83,9 @@ class PostsTableViewController: UITableViewController {
 
         // Configure the cell...
         cell.postComments.text = "test"
-
+        
+        cell.postImage.image = self.images[indexPath.section]
+        
         return cell
     }
     
