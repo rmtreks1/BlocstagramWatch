@@ -29,7 +29,7 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(requestObj)
     }
 
-      
+    
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
 
         var urlString = request.URL!.absoluteString!
@@ -48,6 +48,8 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
             DataSource.sharedInstance.accessToken = accessToken
             println(DataSource.sharedInstance.accessToken)
 
+            dismissViewControllerAnimated(true, completion: nil)
+            
             return false
             
         }
