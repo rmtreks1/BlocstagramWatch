@@ -7,11 +7,12 @@
 //
 
 import UIKit
+//import Foundation
 
 class InstaLoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet var webView: UIWebView!
-    let redirectURI: NSString = "http://www.yourfork.com.au"
+    let redirectURI: String = "http://www.yourfork.com.au"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,64 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(requestObj)
     }
 
+    
+    
+    
+    
+    
+    
+//    - (BOOL) webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+//    NSString *urlString = request.URL.absoluteString;
+//    if ([urlString hasPrefix:[self redirectURI]]) {
+//    // This contains our auth token
+    
+    
+//    NSRange rangeOfAccessTokenParameter = [urlString rangeOfString:@"access_token="];
+//    NSUInteger indexOfTokenStarting = rangeOfAccessTokenParameter.location + rangeOfAccessTokenParameter.length;
+//    NSString *accessToken = [urlString substringFromIndex:indexOfTokenStarting];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:BLCLoginViewControllerDidGetAccessTokenNotification object:accessToken];
+//    return NO;
+//    }
+//    
+//    return YES;
+//    }
+    
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+
+        var urlString = request.URL!.absoluteString
+        
+        if urlString!.hasPrefix(redirectURI as String) {
+            println("auth token")
+            println(urlString)
+            
+            let rangeOfAccessTokenParameter = urlString?.rangeOfString("access_token=")
+            
+            let accessToken = urlString?.substringFromIndex(rangeOfAccessTokenParameter!.endIndex)
+            
+//            let accessToken = urlString.substringFromIndex(advance(urlString,rangeOfAccessTokenParameter?.endIndex))
+            println(rangeOfAccessTokenParameter?.endIndex)
+            println(accessToken)
+            
+        }
+        
+        
+        
+        return true
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
