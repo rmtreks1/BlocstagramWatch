@@ -32,10 +32,16 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
 
         var url = NSURL(string: urlString)
         
-//        
-//        
+        
+        if ((url) != nil) {
+            var request = NSMutableURLRequest(URL: url!)
+            self.webView.loadRequest(request)
+        }
+
+        
+        
+        
 //
-//        
 //        if (url) {
 //            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 //            [self.webView loadRequest:request];
