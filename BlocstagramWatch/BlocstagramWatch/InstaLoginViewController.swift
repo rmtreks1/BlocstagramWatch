@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstaLoginViewController: UIViewController {
+class InstaLoginViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet var webView: UIWebView!
     let redirectURI: NSString = "http://www.yourfork.com.au"
@@ -17,6 +17,8 @@ class InstaLoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        webView.delegate = self
         
         let urlString: NSString = "https://instagram.com/oauth/authorize/?client_id=\(DataSource.sharedInstance.instagramClientID)&redirect_uri=\(redirectURI)&response_type=token"
         
