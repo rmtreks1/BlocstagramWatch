@@ -134,6 +134,39 @@
             </objects>
             <point key="canvasLocation" x="871" y="1189"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="X34-zn-QgP">
+            <objects>
+                <viewController id="93y-Yr-EmD" customClass="LoginViewController" customModule="BlocstagramWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zy7-LU-86k"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXH-bJ-Rkb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PN7-uR-E1V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEk-XN-QwR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sEk-XN-QwR" secondAttribute="trailing" id="DpE-EP-RMm"/>
+                            <constraint firstItem="sEk-XN-QwR" firstAttribute="top" secondItem="PN7-uR-E1V" secondAttribute="top" id="OVJ-Zc-yTM"/>
+                            <constraint firstItem="sEk-XN-QwR" firstAttribute="bottom" secondItem="bXH-bJ-Rkb" secondAttribute="top" id="q68-rG-6M9"/>
+                            <constraint firstItem="sEk-XN-QwR" firstAttribute="leading" secondItem="PN7-uR-E1V" secondAttribute="leading" id="uv4-sF-m21"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="sEk-XN-QwR" id="Gvp-4X-yT0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWK-WC-Af9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691" y="1879"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="pFB-LN-B6W">
             <objects>

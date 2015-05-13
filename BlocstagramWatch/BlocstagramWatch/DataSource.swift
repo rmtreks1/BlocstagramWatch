@@ -14,6 +14,7 @@ class DataSource: NSObject {
     static let sharedInstance = DataSource()
 
     var mediaItems: [AnyObject] = []
+    let instagramClientID : NSString = "5e2dd10b29ab44d6ab921c4b1b34a5ed"
     
 
 //    override convenience init() {
