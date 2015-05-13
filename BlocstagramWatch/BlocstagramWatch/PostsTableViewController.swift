@@ -27,6 +27,9 @@ class PostsTableViewController: UITableViewController {
             println("number of images \(self.images.count)")
         }
         
+        // test shared dataSource
+        var datasourceCount = DataSource.sharedInstance.mediaItems.count
+        println("numer of images in datasource is \(datasourceCount)")
         
 
         // Uncomment the following line to preserve selection between presentations
