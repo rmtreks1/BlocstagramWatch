@@ -78,6 +78,7 @@ class PostsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
+        println(DataSource.sharedInstance.mediaItems.count)
         return DataSource.sharedInstance.mediaItems.count
     }
 
@@ -116,7 +117,18 @@ class PostsTableViewController: UITableViewController {
         // Configure the cell...
         cell.postComments.text = "test"
         
-        cell.postImage.image = (DataSource.sharedInstance.mediaItems[indexPath.section] as! UIImage)
+        // Commented out while building parsing for JSON
+//        cell.postImage.image = (DataSource.sharedInstance.mediaItems[indexPath.section] as! UIImage)
+        cell.postImage.image = UIImage(named: "TestImage.JPG")
+        
+        // move this code into parser function
+        let data = DataSource.sharedInstance.mediaItems[indexPath.section]
+        if let imageView = cell.viewWithTag(101) as? UIImageView {
+            if let urlString = data["images"]["standard_resolution"]["url"].string{
+                let url = NSURL(string: urlString)
+                imageView.hnk_setImageFromURL(url!)
+            }
+        }
         
         return cell
     }
@@ -166,4 +178,19 @@ class PostsTableViewController: UITableViewController {
     }
     */
 
+    
+    
+    
+    
+    @IBAction func reloadButton(sender: UIBarButtonItem) {
+        self.tableView.reloadData()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }

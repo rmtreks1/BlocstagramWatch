@@ -57,6 +57,8 @@ class DataSource: NSObject {
                 if let data = jsonObj["data"].arrayValue as [SwiftyJSON.JSON]?{
                     self.mediaItems = data
                     println(self.mediaItems)
+                    println(self.mediaItems.count)
+                    
 
                 }
             }
