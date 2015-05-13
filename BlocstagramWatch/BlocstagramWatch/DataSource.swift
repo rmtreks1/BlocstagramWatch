@@ -15,7 +15,7 @@ class DataSource: NSObject {
 
     var mediaItems: [AnyObject] = []
     let instagramClientID : NSString = "5e2dd10b29ab44d6ab921c4b1b34a5ed"
-    
+    var accessToken: String = ""
 
 //    override convenience init() {
 //        self.init()

@@ -54,19 +54,23 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
 
-        var urlString = request.URL!.absoluteString
+        var urlString = request.URL!.absoluteString!
         
-        if urlString!.hasPrefix(redirectURI as String) {
+        if urlString.hasPrefix(redirectURI as String) {
             println("auth token")
             println(urlString)
             
-            let rangeOfAccessTokenParameter = urlString?.rangeOfString("access_token=")
+            let rangeOfAccessTokenParameter = urlString.rangeOfString("access_token=")
             
-            let accessToken = urlString?.substringFromIndex(rangeOfAccessTokenParameter!.endIndex)
+            let accessToken = urlString.substringFromIndex(rangeOfAccessTokenParameter!.endIndex)
             
 //            let accessToken = urlString.substringFromIndex(advance(urlString,rangeOfAccessTokenParameter?.endIndex))
             println(rangeOfAccessTokenParameter?.endIndex)
             println(accessToken)
+            DataSource.sharedInstance.accessToken = accessToken
+            println(DataSource.sharedInstance.accessToken)
+
+            return false
             
         }
         
