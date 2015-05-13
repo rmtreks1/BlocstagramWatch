@@ -58,10 +58,22 @@ class DataSource: NSObject {
                     self.mediaItems = data
                     println(self.mediaItems)
                     println(self.mediaItems.count)
+                    self.parseData()
                     
 
                 }
             }
+        }
+    }
+    
+    
+    
+    func parseData(){
+        
+        let rawData = self.mediaItems
+        for item in rawData {
+            let data = item["user"]
+            println(data)
         }
     }
     
