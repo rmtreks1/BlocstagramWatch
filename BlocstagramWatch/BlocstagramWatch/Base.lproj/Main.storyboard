@@ -63,7 +63,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYa-yk-DF4" id="8Vt-qS-okr">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestImage.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-pG-zgA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestImage.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-pG-zgA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="320" id="WVL-DV-4F4"/>
