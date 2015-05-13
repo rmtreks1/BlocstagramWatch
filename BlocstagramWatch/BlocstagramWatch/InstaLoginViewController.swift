@@ -11,17 +11,19 @@ import UIKit
 class InstaLoginViewController: UIViewController {
 
     @IBOutlet var webView: UIWebView!
-    
+    let redirectURI: NSString = "http://www.yourfork.com.au"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        let urlString: NSString = "https://instagram.com/oauth/authorize/?client_id=\(DataSource.sharedInstance.instagramClientID)&redirect_uri=\(redirectURI)&response_type=token"
         
-        let url = NSURL (string: "http://www.apple.com");
-        let requestObj = NSURLRequest(URL: url!);
-        webView.loadRequest(requestObj);
+        
+        let url = NSURL (string: urlString as String)
+        let requestObj = NSURLRequest(URL: url!)
+        webView.loadRequest(requestObj)
     }
 
     override func didReceiveMemoryWarning() {
