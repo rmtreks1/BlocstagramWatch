@@ -17,7 +17,8 @@
 		012B65791B03212C00D94B0D /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 012B656F1B03212C00D94B0D /* 8.jpg */; };
 		012B657A1B03212C00D94B0D /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 012B65701B03212C00D94B0D /* 9.jpg */; };
 		012B657B1B03212C00D94B0D /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 012B65711B03212C00D94B0D /* 10.jpg */; };
-		014766861B03366E00248B0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014766851B03366E00248B0D /* LoginViewController.swift */; };
+		013C6B981B034DF0006D6B8E /* InstaLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */; };
+		014766861B03366E00248B0D /* OldLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014766851B03366E00248B0D /* OldLoginViewController.swift */; };
 		01AB22F01B02D33000707D5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB22EF1B02D33000707D5D /* AppDelegate.swift */; };
 		01AB22F21B02D33000707D5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB22F11B02D33000707D5D /* ViewController.swift */; };
 		01AB22F51B02D33000707D5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AB22F31B02D33000707D5D /* Main.storyboard */; };
@@ -56,7 +57,8 @@
 		012B656F1B03212C00D94B0D /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		012B65701B03212C00D94B0D /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
 		012B65711B03212C00D94B0D /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
-		014766851B03366E00248B0D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaLoginViewController.swift; sourceTree = "<group>"; };
+		014766851B03366E00248B0D /* OldLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldLoginViewController.swift; sourceTree = "<group>"; };
 		01AB22EA1B02D33000707D5D /* BlocstagramWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocstagramWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AB22EE1B02D33000707D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AB22EF1B02D33000707D5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +144,8 @@
 				01F8783E1B0324F3004DC14A /* Media.swift */,
 				01F878401B032585004DC14A /* Comment.swift */,
 				01F878421B0325E5004DC14A /* DataSource.swift */,
-				014766851B03366E00248B0D /* LoginViewController.swift */,
+				014766851B03366E00248B0D /* OldLoginViewController.swift */,
+				013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */,
 			);
 			path = BlocstagramWatch;
 			sourceTree = "<group>";
@@ -290,10 +293,11 @@
 				01F8783F1B0324F3004DC14A /* Media.swift in Sources */,
 				01F878431B0325E5004DC14A /* DataSource.swift in Sources */,
 				01F878411B032585004DC14A /* Comment.swift in Sources */,
+				013C6B981B034DF0006D6B8E /* InstaLoginViewController.swift in Sources */,
 				01F8783D1B032471004DC14A /* User.swift in Sources */,
 				01FE1B811B0301AE0084AED6 /* PostsTableViewController.swift in Sources */,
 				01AB22F21B02D33000707D5D /* ViewController.swift in Sources */,
-				014766861B03366E00248B0D /* LoginViewController.swift in Sources */,
+				014766861B03366E00248B0D /* OldLoginViewController.swift in Sources */,
 				01AB22F01B02D33000707D5D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

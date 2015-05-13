@@ -120,7 +120,7 @@
                     <navigationItem key="navigationItem" id="EGY-l9-DTK">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="uF4-Al-y97">
                             <connections>
-                                <segue destination="RpQ-oi-tMR" kind="modal" id="MDM-VJ-IpV"/>
+                                <segue destination="Efh-yz-i5D" kind="modal" id="ia1-ob-j5E"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj">
@@ -134,38 +134,38 @@
             </objects>
             <point key="canvasLocation" x="871" y="1189"/>
         </scene>
-        <!--Login View Controller-->
-        <scene sceneID="X34-zn-QgP">
+        <!--Insta Login View Controller-->
+        <scene sceneID="TtF-un-QME">
             <objects>
-                <viewController id="93y-Yr-EmD" customClass="LoginViewController" customModule="BlocstagramWatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Efh-yz-i5D" customClass="InstaLoginViewController" customModule="BlocstagramWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Zy7-LU-86k"/>
-                        <viewControllerLayoutGuide type="bottom" id="bXH-bJ-Rkb"/>
+                        <viewControllerLayoutGuide type="top" id="WVq-YN-6Xb"/>
+                        <viewControllerLayoutGuide type="bottom" id="gbD-8h-HND"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PN7-uR-E1V">
+                    <view key="view" contentMode="scaleToFill" id="KE2-OY-EbA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEk-XN-QwR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwf-DI-Vfl">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="sEk-XN-QwR" secondAttribute="trailing" id="DpE-EP-RMm"/>
-                            <constraint firstItem="sEk-XN-QwR" firstAttribute="top" secondItem="PN7-uR-E1V" secondAttribute="top" id="OVJ-Zc-yTM"/>
-                            <constraint firstItem="sEk-XN-QwR" firstAttribute="bottom" secondItem="bXH-bJ-Rkb" secondAttribute="top" id="q68-rG-6M9"/>
-                            <constraint firstItem="sEk-XN-QwR" firstAttribute="leading" secondItem="PN7-uR-E1V" secondAttribute="leading" id="uv4-sF-m21"/>
+                            <constraint firstAttribute="trailing" secondItem="wwf-DI-Vfl" secondAttribute="trailing" id="C6N-Da-nT2"/>
+                            <constraint firstItem="gbD-8h-HND" firstAttribute="top" secondItem="wwf-DI-Vfl" secondAttribute="bottom" id="g7d-zF-Vak"/>
+                            <constraint firstItem="wwf-DI-Vfl" firstAttribute="leading" secondItem="KE2-OY-EbA" secondAttribute="leading" id="nup-dt-VM6"/>
+                            <constraint firstItem="wwf-DI-Vfl" firstAttribute="top" secondItem="WVq-YN-6Xb" secondAttribute="bottom" id="rIV-UH-orG"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="sEk-XN-QwR" id="Gvp-4X-yT0"/>
+                        <outlet property="webView" destination="wwf-DI-Vfl" id="4lx-Uv-wqG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nWK-WC-Af9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ej-1q-OrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="1879"/>
+            <point key="canvasLocation" x="799" y="1911"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pFB-LN-B6W">

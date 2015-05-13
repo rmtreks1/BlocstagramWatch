@@ -8,16 +8,17 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UIWebViewDelegate {
+class LoginViewController: UIViewController {
 
-    @IBOutlet var webView: UIWebView!
+
     var redirectURI: NSString = "http://www.yourfork.com.au"
     
     
     
     
     override func loadView() {
-        webView.delegate = self
+ //       webView = UIWebView()
+//        webView.delegate = self
         
     }
     
@@ -28,33 +29,35 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
 
         // Do any additional setup after loading the view.
         
-        var urlString = "https://instagram.com/oauth/authorize/?client_id=\(DataSource.sharedInstance.instagramClientID)&redirect_uri=\(redirectURI)&response_type=token"
-
-        var url = NSURL(string: urlString)
-        
-        
-        if ((url) != nil) {
-            var request = NSMutableURLRequest(URL: url!)
-            self.webView.loadRequest(request)
-        }
-
-        
-        
-        
+//        var urlString = "https://instagram.com/oauth/authorize/?client_id=\(DataSource.sharedInstance.instagramClientID)&redirect_uri=\(redirectURI)&response_type=token"
 //
-//        if (url) {
-//            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-//            [self.webView loadRequest:request];
-//        }
+//        var url = NSURL(string: urlString)
 //        
+//        
+//        if ((url) != nil) {
+//            var request = NSMutableURLRequest(URL: url!)
+////            webView.loadRequest(request)
+//        }
+
         
-        
-        
-        
+        let testurl = NSURL (string: "http://www.apple.com");
+        let requestObj = NSURLRequest(URL: testurl!);
+//        webView.loadRequest(requestObj);
         
         
         
     }
+    
+    // code as per Bloc checkpoint
+//    deinit{
+//        self.webView.delegate = nil
+//    }
+//    
+//    
+
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
