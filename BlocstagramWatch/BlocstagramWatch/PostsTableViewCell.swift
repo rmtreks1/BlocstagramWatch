@@ -13,8 +13,7 @@ class PostsTableViewCell: UITableViewCell {
     
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var postComments: UILabel!
-    @IBOutlet var likesButton: UIView!
-    @IBOutlet var usernameLabel: UILabel?
+    
     
     
 
