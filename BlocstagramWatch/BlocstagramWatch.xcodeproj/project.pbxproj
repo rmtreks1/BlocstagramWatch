@@ -17,6 +17,7 @@
 		01AB23121B02E32300707D5D /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23111B02E32300707D5D /* PostsTableViewCell.swift */; };
 		01FE1B811B0301AE0084AED6 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */; };
 		01FE1B831B03087E0084AED6 /* PostsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */; };
+		01FE1B851B030E030084AED6 /* Batman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01FE1B841B030E030084AED6 /* Batman.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		01AB23111B02E32300707D5D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		01FE1B841B030E030084AED6 /* Batman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Batman.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				01AB22F11B02D33000707D5D /* ViewController.swift */,
 				01AB22F31B02D33000707D5D /* Main.storyboard */,
 				01AB230F1B02E02800707D5D /* TestImage.JPG */,
+				01FE1B841B030E030084AED6 /* Batman.jpg */,
 				01AB22F61B02D33000707D5D /* Images.xcassets */,
 				01AB22F81B02D33000707D5D /* LaunchScreen.xib */,
 				01AB22ED1B02D33000707D5D /* Supporting Files */,
@@ -207,6 +210,7 @@
 			files = (
 				01AB23101B02E02800707D5D /* TestImage.JPG in Resources */,
 				01AB22F51B02D33000707D5D /* Main.storyboard in Resources */,
+				01FE1B851B030E030084AED6 /* Batman.jpg in Resources */,
 				01AB22FA1B02D33000707D5D /* LaunchScreen.xib in Resources */,
 				01AB22F71B02D33000707D5D /* Images.xcassets in Resources */,
 			);

@@ -30,18 +30,53 @@ class PostsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 2
+        return 1
+    }
+    
+//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//        let headerCell = PostsHeaderTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier:"HeaderCell")
+//        
+////        let headerCell = tableView.dequeueReusableHeaderFooterViewWithIdentifier("HeaderCell") as? PostsHeaderTableViewCell
+//        
+////        if (headerCell == nil) {
+////            headerCell = PostsHeaderTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier:"HeaderCell")
+////        }
+////        
+////        headerCell.profileImage.image = UIImage(named: "TestImage.JPG")
+//        headerCell.usernameLabel.text = "test"
+//
+//        return headerCell
+//    }
+
+    
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = self.tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! PostsHeaderTableViewCell
+        
+        headerCell.usernameLabel.text = "rmtreks"
+        headerCell.profileImage.image = UIImage(named: "Batman.jpg")
+        
+        return headerCell
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
     }
     
     
     
     
+    
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "testing this stupid shit"
+//    }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PostsTableViewCell {

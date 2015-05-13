@@ -11,6 +11,9 @@ import UIKit
 class PostsHeaderTableViewCell: UITableViewCell {
     
     
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var likesButtonCounter: UIView!
     
     
     

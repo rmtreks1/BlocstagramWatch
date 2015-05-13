@@ -14,7 +14,8 @@ class PostsTableViewCell: UITableViewCell {
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var postComments: UILabel!
     @IBOutlet var likesButton: UIView!
-    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var usernameLabel: UILabel?
+    
     
 
     override func awakeFromNib() {
