@@ -16,6 +16,7 @@
 		01AB23101B02E02800707D5D /* TestImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 01AB230F1B02E02800707D5D /* TestImage.JPG */; };
 		01AB23121B02E32300707D5D /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23111B02E32300707D5D /* PostsTableViewCell.swift */; };
 		01FE1B811B0301AE0084AED6 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */; };
+		01FE1B831B03087E0084AED6 /* PostsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		01AB230F1B02E02800707D5D /* TestImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.JPG; sourceTree = "<group>"; };
 		01AB23111B02E32300707D5D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
 		01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				01AB22ED1B02D33000707D5D /* Supporting Files */,
 				01AB23111B02E32300707D5D /* PostsTableViewCell.swift */,
 				01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */,
+				01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */,
 			);
 			path = BlocstagramWatch;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FE1B831B03087E0084AED6 /* PostsHeaderTableViewCell.swift in Sources */,
 				01AB23121B02E32300707D5D /* PostsTableViewCell.swift in Sources */,
 				01FE1B811B0301AE0084AED6 /* PostsTableViewController.swift in Sources */,
 				01AB22F21B02D33000707D5D /* ViewController.swift in Sources */,

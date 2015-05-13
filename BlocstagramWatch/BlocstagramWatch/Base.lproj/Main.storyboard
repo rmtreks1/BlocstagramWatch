@@ -14,32 +14,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="444" id="tCR-Yi-XEc" customClass="PostsTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="49" id="tCR-Yi-XEc" customClass="PostsHeaderTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCR-Yi-XEc" id="cQt-Dk-fZY">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestImage.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-rO-Had">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                            <rect key="frame" x="8" y="8" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="320" id="8wV-Dy-tcN"/>
+                                                <constraint firstAttribute="height" constant="30" id="DB8-4b-PuW"/>
+                                                <constraint firstAttribute="width" constant="30" id="DKo-6j-6WC"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRF-tO-7Ug" userLabel="LikesButtonAndCounter">
-                                            <rect key="frame" x="212" y="323" width="100" height="30"/>
+                                            <rect key="frame" x="212" y="8" width="100" height="30"/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="LD8-tU-gGm"/>
                                                 <constraint firstAttribute="height" constant="30" id="XiT-4I-Acg"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IU0-T8-hTR" userLabel="Comments">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-lz-PZD" userLabel="Username">
+                                            <rect key="frame" x="46" y="12" width="158" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="T2C-rO-Had" firstAttribute="leading" secondItem="cQt-Dk-fZY" secondAttribute="leadingMargin" id="TUd-Ws-NDj"/>
+                                        <constraint firstItem="FRF-tO-7Ug" firstAttribute="top" secondItem="cQt-Dk-fZY" secondAttribute="topMargin" id="W3Q-bs-Qer"/>
+                                        <constraint firstItem="T2C-rO-Had" firstAttribute="top" secondItem="cQt-Dk-fZY" secondAttribute="topMargin" id="bXY-fU-ez0"/>
+                                        <constraint firstItem="6Eq-lz-PZD" firstAttribute="centerY" secondItem="T2C-rO-Had" secondAttribute="centerY" id="dcQ-6x-DGx"/>
+                                        <constraint firstItem="6Eq-lz-PZD" firstAttribute="leading" secondItem="T2C-rO-Had" secondAttribute="trailing" constant="8" id="lxv-cq-ldj"/>
+                                        <constraint firstItem="FRF-tO-7Ug" firstAttribute="leading" secondItem="6Eq-lz-PZD" secondAttribute="trailing" constant="8" id="tEJ-y5-T4H"/>
+                                        <constraint firstItem="FRF-tO-7Ug" firstAttribute="trailing" secondItem="cQt-Dk-fZY" secondAttribute="trailingMargin" id="xKJ-rd-yrG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="likesButton" destination="FRF-tO-7Ug" id="dBS-Mf-dXX"/>
+                                    <outlet property="postImage" destination="T2C-rO-Had" id="VAY-rO-8id"/>
+                                    <outlet property="usernameLabel" destination="6Eq-lz-PZD" id="va5-pC-4q4"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="444" id="NYa-yk-DF4" customClass="PostsTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYa-yk-DF4" id="8Vt-qS-okr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestImage.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-pG-zgA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="320" id="WVL-DV-4F4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvd-lb-JnB" userLabel="LikesButtonAndCounter">
+                                            <rect key="frame" x="212" y="323" width="100" height="30"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="7Sh-cN-ovA"/>
+                                                <constraint firstAttribute="height" constant="30" id="G6b-sr-5Br"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-Wi-Ca4" userLabel="Comments">
                                             <rect key="frame" x="8" y="356" width="304" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-lz-PZD" userLabel="Username">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbi-4J-KXn" userLabel="Username">
                                             <rect key="frame" x="8" y="325" width="196" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,24 +90,24 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="T2C-rO-Had" firstAttribute="top" secondItem="cQt-Dk-fZY" secondAttribute="top" id="MGg-Gk-Mos"/>
-                                        <constraint firstItem="FRF-tO-7Ug" firstAttribute="leading" secondItem="6Eq-lz-PZD" secondAttribute="trailing" constant="8" id="RIf-c4-wmk"/>
-                                        <constraint firstAttribute="trailing" secondItem="T2C-rO-Had" secondAttribute="trailing" id="UHt-xK-7cR"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="FRF-tO-7Ug" secondAttribute="trailing" id="XbI-bK-AmB"/>
-                                        <constraint firstItem="FRF-tO-7Ug" firstAttribute="centerY" secondItem="6Eq-lz-PZD" secondAttribute="centerY" constant="3" id="XzZ-5R-4bw"/>
-                                        <constraint firstItem="FRF-tO-7Ug" firstAttribute="top" secondItem="T2C-rO-Had" secondAttribute="bottom" constant="3" id="b3D-Yn-hER"/>
-                                        <constraint firstItem="T2C-rO-Had" firstAttribute="leading" secondItem="cQt-Dk-fZY" secondAttribute="leading" id="bbd-Mz-4JM"/>
-                                        <constraint firstAttribute="trailing" secondItem="IU0-T8-hTR" secondAttribute="trailing" constant="8" id="h8A-qH-5rA"/>
-                                        <constraint firstItem="6Eq-lz-PZD" firstAttribute="leading" secondItem="cQt-Dk-fZY" secondAttribute="leadingMargin" id="hdq-xV-jxq"/>
-                                        <constraint firstItem="IU0-T8-hTR" firstAttribute="top" secondItem="FRF-tO-7Ug" secondAttribute="bottom" constant="3" id="idJ-fV-OXF"/>
-                                        <constraint firstItem="IU0-T8-hTR" firstAttribute="leading" secondItem="cQt-Dk-fZY" secondAttribute="leading" constant="8" id="l0f-Yl-nDe"/>
+                                        <constraint firstItem="bCB-pG-zgA" firstAttribute="top" secondItem="8Vt-qS-okr" secondAttribute="top" id="2kI-7a-wSJ"/>
+                                        <constraint firstItem="p0M-Wi-Ca4" firstAttribute="leading" secondItem="8Vt-qS-okr" secondAttribute="leading" constant="8" id="5Hz-KJ-39G"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Hvd-lb-JnB" secondAttribute="trailing" id="G4s-gb-lWX"/>
+                                        <constraint firstItem="Hvd-lb-JnB" firstAttribute="leading" secondItem="cbi-4J-KXn" secondAttribute="trailing" constant="8" id="NqG-OU-Ja0"/>
+                                        <constraint firstItem="cbi-4J-KXn" firstAttribute="leading" secondItem="8Vt-qS-okr" secondAttribute="leadingMargin" id="OUz-eu-dRf"/>
+                                        <constraint firstItem="p0M-Wi-Ca4" firstAttribute="top" secondItem="Hvd-lb-JnB" secondAttribute="bottom" constant="3" id="PKv-TN-UX3"/>
+                                        <constraint firstItem="Hvd-lb-JnB" firstAttribute="centerY" secondItem="cbi-4J-KXn" secondAttribute="centerY" constant="3" id="SXo-do-acc"/>
+                                        <constraint firstAttribute="trailing" secondItem="p0M-Wi-Ca4" secondAttribute="trailing" constant="8" id="Sjb-XF-QdH"/>
+                                        <constraint firstItem="Hvd-lb-JnB" firstAttribute="top" secondItem="bCB-pG-zgA" secondAttribute="bottom" constant="3" id="WCx-Ov-sFm"/>
+                                        <constraint firstAttribute="trailing" secondItem="bCB-pG-zgA" secondAttribute="trailing" id="twR-nS-e70"/>
+                                        <constraint firstItem="bCB-pG-zgA" firstAttribute="leading" secondItem="8Vt-qS-okr" secondAttribute="leading" id="znL-Xy-Yfq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="likesButton" destination="FRF-tO-7Ug" id="dBS-Mf-dXX"/>
-                                    <outlet property="postComments" destination="IU0-T8-hTR" id="e9k-04-ZGm"/>
-                                    <outlet property="postImage" destination="T2C-rO-Had" id="VAY-rO-8id"/>
-                                    <outlet property="usernameLabel" destination="6Eq-lz-PZD" id="va5-pC-4q4"/>
+                                    <outlet property="likesButton" destination="Hvd-lb-JnB" id="UYo-O2-F3M"/>
+                                    <outlet property="postComments" destination="p0M-Wi-Ca4" id="Edl-jv-Xod"/>
+                                    <outlet property="postImage" destination="bCB-pG-zgA" id="SnC-GK-POr"/>
+                                    <outlet property="usernameLabel" destination="cbi-4J-KXn" id="tLQ-QE-001"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
