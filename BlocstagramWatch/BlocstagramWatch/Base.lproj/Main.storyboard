@@ -18,7 +18,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCR-Yi-XEc" id="cQt-Dk-fZY">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-rO-Had">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestImage.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="T2C-rO-Had">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="320" id="8wV-Dy-tcN"/>
@@ -162,6 +162,9 @@
             <point key="canvasLocation" x="369" y="1189"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TestImage.JPG" width="3071" height="1919"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
