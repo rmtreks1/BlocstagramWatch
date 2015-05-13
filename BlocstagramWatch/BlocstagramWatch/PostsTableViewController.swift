@@ -16,16 +16,16 @@ class PostsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        // sample images to test
-        for var i = 1; i <= 10; i++ {
-            let imageName = "\(i).jpg"
-            let image = UIImage(named: imageName)
-            if ((image) != nil) {
-                self.images.append(image!)
-            }
-            
-            println("number of images \(self.images.count)")
-        }
+//        // sample images to test
+//        for var i = 1; i <= 10; i++ {
+//            let imageName = "\(i).jpg"
+//            let image = UIImage(named: imageName)
+//            if ((image) != nil) {
+//                self.images.append(image!)
+//            }
+//            
+//            println("number of images \(self.images.count)")
+//        }
         
         // test shared dataSource
         var datasourceCount = DataSource.sharedInstance.mediaItems.count
@@ -49,7 +49,7 @@ class PostsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return self.images.count
+        return DataSource.sharedInstance.mediaItems.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,7 +87,7 @@ class PostsTableViewController: UITableViewController {
         // Configure the cell...
         cell.postComments.text = "test"
         
-        cell.postImage.image = self.images[indexPath.section]
+        cell.postImage.image = (DataSource.sharedInstance.mediaItems[indexPath.section] as! UIImage)
         
         return cell
     }
