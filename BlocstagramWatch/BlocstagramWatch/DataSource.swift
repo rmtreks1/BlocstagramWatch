@@ -83,9 +83,20 @@ class DataSource: NSObject {
             let user = User(userDicionary: data)
             println(user.fullName)
             
-            if let caption = item["caption"]["text"].string {
+            var imageURL : NSURL
+            if let urlString = data["images"]["standard_resolution"]["url"].string{
+                imageURL = NSURL(string: urlString)!
+            
+            let caption = item["caption"]["text"].string
+            println(caption)
+            
+            
+            
+            
                 
-            }
+            
+            
+            
             
         }
     }
