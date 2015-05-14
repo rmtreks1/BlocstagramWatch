@@ -74,7 +74,12 @@ class DataSource: NSObject {
         for item in rawData {
             let data = item["user"]
             println(data)
+            var user = User(userDicionary: data)
+            println(user.fullName)
         }
     }
+    
+    
+    
     
 }
