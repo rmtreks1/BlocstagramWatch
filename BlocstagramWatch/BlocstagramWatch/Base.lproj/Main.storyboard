@@ -58,7 +58,7 @@
                                     <outlet property="usernameLabel" destination="6Eq-lz-PZD" id="fi6-Xh-6hK"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="444" id="NYa-yk-DF4" customClass="PostsTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="NYa-yk-DF4" customClass="PostsTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NYa-yk-DF4" id="8Vt-qS-okr">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -67,14 +67,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="320" id="RYU-Qn-GCk"/>
-                                                <constraint firstAttribute="width" constant="320" id="zCn-Jt-Uc2"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-MI-EKb" userLabel="CaptionView">
-                                            <rect key="frame" x="0.0" y="322" width="320" height="92"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-MI-EKb" userLabel="CaptionView">
+                                            <rect key="frame" x="0.0" y="322" width="320" height="79"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mla-vz-tsB" userLabel="captionLabel">
-                                                    <rect key="frame" x="8" y="2" width="304" height="88"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mla-vz-tsB" userLabel="captionLabel">
+                                                    <rect key="frame" x="8" y="2" width="304" height="75"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -88,8 +87,8 @@
                                                 <constraint firstAttribute="bottom" secondItem="mla-vz-tsB" secondAttribute="bottom" constant="2" id="exQ-T0-rw3"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-Wi-Ca4" userLabel="Comments">
-                                            <rect key="frame" x="8" y="412" width="304" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="30" text="Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-Wi-Ca4" userLabel="Comments">
+                                            <rect key="frame" x="8" y="403" width="304" height="30"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
