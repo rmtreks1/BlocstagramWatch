@@ -28,5 +28,21 @@ class PostsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    func setMedia(mediaItem: Media){
+        
+        let imageView = self.postImage
+        let url = mediaItem.mediaURL
+        imageView.hnk_setImageFromURL(url!)
+        
+        self.postCaption.text = mediaItem.caption as? String
+        
+        if mediaItem.comments.count > 0 {
+            self.postComments.text = mediaItem.comments[0].text as? String
+        }
+    }
+    
+    
 
 }

@@ -32,4 +32,16 @@ class PostsHeaderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
+    func setMedia(mediaItem: Media){
+        
+        let imageView = self.profileImage as UIImageView
+        let url = mediaItem.user?.profilePictureURL
+        imageView.hnk_setImageFromURL(url!)
+        
+        
+        self.usernameLabel.text = mediaItem.user?.userName as? String    }
+
+    
+    
 }

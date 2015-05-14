@@ -93,16 +93,8 @@ class PostsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = self.tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! PostsHeaderTableViewCell
         
-       
-
         let mediaItem = DataSource.sharedInstance.parsedMediaItems[section]
-        let imageView = headerCell.profileImage as UIImageView
-        let url = mediaItem.user?.profilePictureURL
-        imageView.hnk_setImageFromURL(url!)
-        
-
-         headerCell.usernameLabel.text = mediaItem.user?.userName as? String
-        
+        headerCell.setMedia(mediaItem)
         
         return headerCell
     }
@@ -116,23 +108,15 @@ class PostsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PostsTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostsTableViewCell
 
-        // Configure the cell...
-//        cell.postComments.text = "test"
+
         
 
         cell.postImage.image = UIImage(named: "TestImage.JPG")
         
-        // move this code into parser function
         let mediaItem = DataSource.sharedInstance.parsedMediaItems[indexPath.section]
-        let imageView = cell.postImage
-        let url = mediaItem.mediaURL
-        imageView.hnk_setImageFromURL(url!)
         
-        cell.postCaption.text = mediaItem.caption as? String
+        cell.setMedia(mediaItem)
         
-        if mediaItem.comments.count > 0 {
-        cell.postComments.text = mediaItem.comments[0].text as? String
-        }
         
         return cell
     }
