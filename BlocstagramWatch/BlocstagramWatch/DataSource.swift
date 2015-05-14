@@ -19,7 +19,7 @@ class DataSource: NSObject {
     var mediaItems: [SwiftyJSON.JSON] = []
     let instagramClientID : NSString = "5e2dd10b29ab44d6ab921c4b1b34a5ed"
     var accessToken: String?
-    var parsedMediaItems: [(id: String, user: User, imageURL: NSURL, caption: String, comment: Comment)] = []
+    var parsedMediaItems: [(id: String, user: User, imageURL: NSURL, caption: String, comment: [Comment])] = []
 
 
 //    override convenience init() {
@@ -86,6 +86,7 @@ class DataSource: NSObject {
             var imageURL : NSURL
             if let urlString = data["images"]["standard_resolution"]["url"].string{
                 imageURL = NSURL(string: urlString)!
+            }
             
             let caption = item["caption"]["text"].string
             println(caption)
