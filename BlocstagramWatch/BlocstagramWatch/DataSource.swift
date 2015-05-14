@@ -19,36 +19,18 @@ class DataSource: NSObject {
     var mediaItems: [SwiftyJSON.JSON] = []
     let instagramClientID : NSString = "5e2dd10b29ab44d6ab921c4b1b34a5ed"
     var accessToken: String?
-    var parsedMediaItems: [(id: String, user: User, imageURL: NSURL, caption: String, comment: [Comment])] = []
+    var parsedMediaItems: Array <Media> = []
 
-
-//    override convenience init() {
-//        self.init()
-//        
-//    }
-
+    
     override init() {
         super.init()
-//        self.mediaItems = []
-//        self.init()
-//        sampleData()
+
         
         // temporary cheat => login should be called BEFORE datasource
         accessToken = "6516672.5e2dd10.41ed4ad67a2442e0ae130d3e13e88e40"
         retrieveDataFromInsta()
     }
     
-//    func sampleData(){
-//        for var i = 1; i <= 10; i++ {
-//            let imageName = "\(i).jpg"
-//            let image = UIImage(named: imageName)
-//            if ((image) != nil) {
-//                self.mediaItems.append(image!)
-//            }
-//            
-//            println("number of images \(self.mediaItems.count)")
-//        }
-//    }
     
     
     func retrieveDataFromInsta(){
@@ -60,6 +42,7 @@ class DataSource: NSObject {
                     println(self.mediaItems)
                     println(self.mediaItems.count)
                     self.parseData()
+                    println(self.parsedMediaItems.count) // checking items
                     
 
                 }
@@ -73,30 +56,28 @@ class DataSource: NSObject {
         
         let rawData = self.mediaItems
         for item in rawData {
-            let data = item["user"]
-            println(data)
+//            let data = item["user"]
+//            println(data)
+//            
+//            
+//            let id = item["id"].string!
+//            println(id)
+//            
+//            let user = User(userDicionary: data)
+//            println(user.fullName)
+//            
+//            var imageURL : NSURL
+//            if let urlString = data["images"]["standard_resolution"]["url"].string{
+//                imageURL = NSURL(string: urlString)!
+//            }
+//            
+//            let caption = item["caption"]["text"].string
+//            println(caption)
+
+            // send item to Media for parsing
+            let mediaItem = Media(mediaDictionary: item)
             
-            
-            let id = item["id"].string!
-            println(id)
-            
-            let user = User(userDicionary: data)
-            println(user.fullName)
-            
-            var imageURL : NSURL
-            if let urlString = data["images"]["standard_resolution"]["url"].string{
-                imageURL = NSURL(string: urlString)!
-            }
-            
-            let caption = item["caption"]["text"].string
-            println(caption)
-            
-            
-            
-            
-                
-            
-            
+            self.parsedMediaItems.append(mediaItem)
             
             
         }

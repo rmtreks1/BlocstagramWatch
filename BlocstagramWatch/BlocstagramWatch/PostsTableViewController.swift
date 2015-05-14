@@ -78,8 +78,7 @@ class PostsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        println(DataSource.sharedInstance.mediaItems.count)
-        return DataSource.sharedInstance.mediaItems.count
+        return DataSource.sharedInstance.parsedMediaItems.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,17 +91,16 @@ class PostsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = self.tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! PostsHeaderTableViewCell
         
-        headerCell.usernameLabel.text = "rmtreks"
-        headerCell.profileImage.image = UIImage(named: "Batman.jpg")
-        
-        
-        
-        let data = DataSource.sharedInstance.mediaItems[section]
+       
+
+        let mediaItem = DataSource.sharedInstance.parsedMediaItems[section]
         let imageView = headerCell.profileImage as UIImageView
-        if let urlString = data["user"]["profile_picture"].string{
-                let url = NSURL(string: urlString)
-                imageView.hnk_setImageFromURL(url!)
-            }
+        let url = mediaItem.user?.profilePictureURL
+        imageView.hnk_setImageFromURL(url!)
+        
+
+         headerCell.usernameLabel.text = mediaItem.user?.userName as? String
+        
         
         return headerCell
     }
@@ -113,31 +111,21 @@ class PostsTableViewController: UITableViewController {
     
     
     
-    
-    
-//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "testing this stupid shit"
-//    }
-
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PostsTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostsTableViewCell
 
         // Configure the cell...
         cell.postComments.text = "test"
         
-        // Commented out while building parsing for JSON
-//        cell.postImage.image = (DataSource.sharedInstance.mediaItems[indexPath.section] as! UIImage)
+
         cell.postImage.image = UIImage(named: "TestImage.JPG")
         
         // move this code into parser function
-        let data = DataSource.sharedInstance.mediaItems[indexPath.section]
-        if let imageView = cell.viewWithTag(101) as? UIImageView {
-            if let urlString = data["images"]["standard_resolution"]["url"].string{
-                let url = NSURL(string: urlString)
-                imageView.hnk_setImageFromURL(url!)
-            }
-        }
+        let mediaItem = DataSource.sharedInstance.parsedMediaItems[indexPath.section]
+        let imageView = cell.postImage
+        let url = mediaItem.mediaURL
+        imageView.hnk_setImageFromURL(url!)
+        
         
         return cell
     }
