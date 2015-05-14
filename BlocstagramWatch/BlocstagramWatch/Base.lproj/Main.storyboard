@@ -70,20 +70,42 @@
                                                 <constraint firstAttribute="width" constant="320" id="zCn-Jt-Uc2"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-Wi-Ca4" userLabel="Comments">
-                                            <rect key="frame" x="8" y="325" width="304" height="105"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-MI-EKb" userLabel="CaptionView">
+                                            <rect key="frame" x="0.0" y="322" width="320" height="88"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mla-vz-tsB" userLabel="captionLabel">
+                                                    <rect key="frame" x="8" y="2" width="304" height="88"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="mla-vz-tsB" firstAttribute="top" secondItem="Ky9-MI-EKb" secondAttribute="top" constant="2" id="Z5b-jU-GmM"/>
+                                                <constraint firstItem="mla-vz-tsB" firstAttribute="leading" secondItem="Ky9-MI-EKb" secondAttribute="leading" constant="8" id="cKt-Gw-wJh"/>
+                                                <constraint firstAttribute="trailing" secondItem="mla-vz-tsB" secondAttribute="trailing" constant="8" id="cuY-Zy-EQF"/>
+                                                <constraint firstAttribute="bottom" secondItem="mla-vz-tsB" secondAttribute="bottom" constant="2" id="exQ-T0-rw3"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Comments" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-Wi-Ca4" userLabel="Comments">
+                                            <rect key="frame" x="8" y="412" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="bCB-pG-zgA" firstAttribute="top" secondItem="8Vt-qS-okr" secondAttribute="top" id="2kI-7a-wSJ"/>
-                                        <constraint firstItem="p0M-Wi-Ca4" firstAttribute="leading" secondItem="8Vt-qS-okr" secondAttribute="leading" constant="8" id="5Hz-KJ-39G"/>
-                                        <constraint firstItem="p0M-Wi-Ca4" firstAttribute="top" secondItem="bCB-pG-zgA" secondAttribute="bottom" constant="5" id="DuI-x1-Ddg"/>
-                                        <constraint firstAttribute="trailing" secondItem="p0M-Wi-Ca4" secondAttribute="trailing" constant="8" id="Sjb-XF-QdH"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="p0M-Wi-Ca4" secondAttribute="bottom" constant="5" id="awg-sg-gom"/>
+                                        <constraint firstItem="Ky9-MI-EKb" firstAttribute="leading" secondItem="8Vt-qS-okr" secondAttribute="leading" id="I1l-n9-a9P"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="p0M-Wi-Ca4" secondAttribute="bottom" constant="2" id="XtN-kk-Teg"/>
+                                        <constraint firstItem="Ky9-MI-EKb" firstAttribute="top" secondItem="bCB-pG-zgA" secondAttribute="bottom" constant="2" id="cu8-VB-6z3"/>
+                                        <constraint firstItem="p0M-Wi-Ca4" firstAttribute="trailing" secondItem="8Vt-qS-okr" secondAttribute="trailingMargin" id="jN5-6A-zyZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ky9-MI-EKb" secondAttribute="trailing" id="sRd-NF-bKW"/>
                                         <constraint firstAttribute="trailing" secondItem="bCB-pG-zgA" secondAttribute="trailing" id="twR-nS-e70"/>
+                                        <constraint firstItem="p0M-Wi-Ca4" firstAttribute="leading" secondItem="8Vt-qS-okr" secondAttribute="leadingMargin" id="wVl-iX-Uzt"/>
+                                        <constraint firstItem="p0M-Wi-Ca4" firstAttribute="top" secondItem="Ky9-MI-EKb" secondAttribute="bottom" constant="2" id="x5Z-pZ-A0V"/>
                                         <constraint firstItem="bCB-pG-zgA" firstAttribute="leading" secondItem="8Vt-qS-okr" secondAttribute="leading" id="znL-Xy-Yfq"/>
                                     </constraints>
                                 </tableViewCellContentView>
