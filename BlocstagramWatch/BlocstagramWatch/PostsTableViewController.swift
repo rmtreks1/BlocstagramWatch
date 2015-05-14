@@ -95,6 +95,15 @@ class PostsTableViewController: UITableViewController {
         headerCell.usernameLabel.text = "rmtreks"
         headerCell.profileImage.image = UIImage(named: "Batman.jpg")
         
+        
+        
+        let data = DataSource.sharedInstance.mediaItems[section]
+        let imageView = headerCell.profileImage as UIImageView
+        if let urlString = data["user"]["profile_picture"].string{
+                let url = NSURL(string: urlString)
+                imageView.hnk_setImageFromURL(url!)
+            }
+        
         return headerCell
     }
     
