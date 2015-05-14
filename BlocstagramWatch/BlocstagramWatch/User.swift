@@ -18,7 +18,7 @@ class User: NSObject {
     var userName: NSString?
     var fullName: NSString?
     var profilePictureURL: NSURL?
-    var profilePicture: UIImage?
+    
     
     
     
@@ -46,7 +46,8 @@ class User: NSObject {
         
         if let urlString = userDicionary["profile_picture"].string {
             self.profilePictureURL = NSURL(string: urlString)
-//            self.profilePicture.hnk_setImageFromURL(profilePictureURL!)
+            
+
         }
         
     }

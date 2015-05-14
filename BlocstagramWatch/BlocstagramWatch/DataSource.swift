@@ -19,6 +19,7 @@ class DataSource: NSObject {
     var mediaItems: [SwiftyJSON.JSON] = []
     let instagramClientID : NSString = "5e2dd10b29ab44d6ab921c4b1b34a5ed"
     var accessToken: String?
+    var parsedMediaItems: [(id: String, user: User, imageURL: NSURL, caption: String, comment: Comment)] = []
 
 
 //    override convenience init() {
@@ -74,8 +75,18 @@ class DataSource: NSObject {
         for item in rawData {
             let data = item["user"]
             println(data)
-            var user = User(userDicionary: data)
+            
+            
+            let id = item["id"].string!
+            println(id)
+            
+            let user = User(userDicionary: data)
             println(user.fullName)
+            
+            if let caption = item["caption"]["text"].string {
+                
+            }
+            
         }
     }
     
