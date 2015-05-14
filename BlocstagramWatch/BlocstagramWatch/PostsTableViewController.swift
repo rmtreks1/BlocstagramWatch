@@ -66,6 +66,8 @@ class PostsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -190,7 +192,14 @@ class PostsTableViewController: UITableViewController {
     
     
     
-    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
     
     
     
