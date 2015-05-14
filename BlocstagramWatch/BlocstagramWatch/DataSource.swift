@@ -21,6 +21,8 @@ class DataSource: NSObject {
     var accessToken: String?
     var parsedMediaItems: Array <Media> = []
     var minID = ""
+    var isRefreshing: Bool = false
+    var pullToRefresh: Bool = false
 
     
     override init() {
@@ -44,20 +46,26 @@ class DataSource: NSObject {
         }
         
         
-        Alamofire.request(.GET, "https://api.instagram.com/v1/users/self/feed?access_token=\(accessToken!)&min_id=\(minID)").responseJSON { (request, response, json, error) in
-            if json != nil {
-                var jsonObj = JSON(json!)
-                if let data = jsonObj["data"].arrayValue as [SwiftyJSON.JSON]?{
-                    self.mediaItems = data
-//                    println(self.mediaItems)
-                    println(self.mediaItems.count)
-                    self.parseData()
-                    println(self.parsedMediaItems.count) // checking items
-                    
-
+        if !self.isRefreshing {
+            self.isRefreshing = true
+            Alamofire.request(.GET, "https://api.instagram.com/v1/users/self/feed?access_token=\(accessToken!)&min_id=\(minID)").responseJSON { (request, response, json, error) in
+                if json != nil {
+                    var jsonObj = JSON(json!)
+                    if let data = jsonObj["data"].arrayValue as [SwiftyJSON.JSON]?{
+                        self.mediaItems = data
+                        //                    println(self.mediaItems)
+                        println(self.mediaItems.count)
+                        self.parseData()
+                        println(self.parsedMediaItems.count) // checking items
+                        
+                        
+                    }
                 }
             }
         }
+        
+        
+        
     }
     
     
@@ -65,6 +73,7 @@ class DataSource: NSObject {
     func parseData(){
         
         let rawData = self.mediaItems
+        var tempParsedMediaItems: Array <Media> = []
         for item in rawData {
 //            let data = item["user"]
 //            println(data)
@@ -90,11 +99,17 @@ class DataSource: NSObject {
             let tmpMinID = mediaItem.idNumber
             println("**********************************************************************************************************************************************************************************************************************************************\(tmpMinID)")
 
-            
-            self.parsedMediaItems.append(mediaItem)
-            
-            
+           
+               tempParsedMediaItems.append(mediaItem)
         }
+        if self.pullToRefresh {
+            tempParsedMediaItems += self.parsedMediaItems
+            self.parsedMediaItems = tempParsedMediaItems
+            self.pullToRefresh = false
+        } else {
+            self.parsedMediaItems += tempParsedMediaItems
+        }
+        self.isRefreshing = false
     }
     
     

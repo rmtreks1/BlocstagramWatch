@@ -196,6 +196,8 @@ class PostsTableViewController: UITableViewController {
         // Do some reloading of data and update the table view's data source
         // Fetch more objects from a web service, for example...
 
+        
+        DataSource.sharedInstance.pullToRefresh = true
         DataSource.sharedInstance.retrieveDataFromInsta()
         
         self.tableView.reloadData()
