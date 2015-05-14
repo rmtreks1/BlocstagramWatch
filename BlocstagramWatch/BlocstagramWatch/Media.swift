@@ -19,7 +19,8 @@ class Media: NSObject {
     var mediaURL: NSURL?
     var image: UIImage?
     var caption: NSString?
-    var comments: NSArray?
+//    var comments: NSArray?
+    var comments: Array <Comment> = []
     
     
     
@@ -45,8 +46,41 @@ class Media: NSObject {
 
         self.user = User(userDicionary: mediaDictionary["user"])
         
+        let commentDictionary = mediaDictionary["comments"]["data"]
+        println("comments count is \(commentDictionary.count)")
+        println(commentDictionary)
+       
+        let commentCount = commentDictionary.count
+        if commentCount >= 1{
+            for index in 0...commentCount-1 {
+                let commentToAdd = Comment(commentDictionary: commentDictionary[index])
+//                self.comments += commentToAdd
+                self.comments.append(commentToAdd)
+            }
+                     println("count post comment parse is \(self.comments.count)")
+        }
+        
 
         
+        
+        
+        
+        
+//        
+//        
+//        let json = JSONValue(jsonResult)
+//        let count: Int? = json["data"].array?.count
+//        println("found \(count!) challenges")
+//        
+//        if let ct = count {
+//            for index in 0...ct-1 {
+//                // println(json["data"][index]["challengeName"].string!)
+//                if let name = json["data"][index]["challengeName"].string {
+//                    println(name)
+//                }
+//                
+//            }
+//        
         
     }
     

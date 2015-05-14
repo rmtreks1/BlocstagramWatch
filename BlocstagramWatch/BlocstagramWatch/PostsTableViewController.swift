@@ -115,7 +115,7 @@ class PostsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostsTableViewCell
 
         // Configure the cell...
-        cell.postComments.text = "test"
+//        cell.postComments.text = "test"
         
 
         cell.postImage.image = UIImage(named: "TestImage.JPG")
@@ -127,6 +127,8 @@ class PostsTableViewController: UITableViewController {
         imageView.hnk_setImageFromURL(url!)
         
         cell.postCaption.text = mediaItem.caption as? String
+        
+        cell.postComments.text = String(mediaItem.comments.count)
         
         
         return cell

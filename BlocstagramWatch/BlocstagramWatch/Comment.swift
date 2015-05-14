@@ -17,15 +17,15 @@ class Comment: NSObject {
     var idNumber: NSString?
     var from: User?
     var text: NSString?
-    var count: Int?
+
     
     
     
     init (commentDictionary: SwiftyJSON.JSON){
-        self.count = commentDictionary["count"].int
-        self.idNumber = commentDictionary["data"]["id"].string
-        self.text = commentDictionary["data"]["text"].string
-        self.from = User(userDicionary: commentDictionary["data"]["from"])
+        
+        self.idNumber = commentDictionary["id"].string
+        self.text = commentDictionary["text"].string
+        self.from = User(userDicionary: commentDictionary["from"])
         }
         
     }
