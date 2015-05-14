@@ -70,8 +70,8 @@
                                                 <constraint firstAttribute="width" constant="320" id="zCn-Jt-Uc2"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-MI-EKb" userLabel="CaptionView">
-                                            <rect key="frame" x="0.0" y="322" width="320" height="88"/>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-MI-EKb" userLabel="CaptionView">
+                                            <rect key="frame" x="0.0" y="322" width="320" height="92"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mla-vz-tsB" userLabel="captionLabel">
                                                     <rect key="frame" x="8" y="2" width="304" height="88"/>
@@ -110,6 +110,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="postCaption" destination="mla-vz-tsB" id="MRW-3a-cwH"/>
                                     <outlet property="postComments" destination="p0M-Wi-Ca4" id="Edl-jv-Xod"/>
                                     <outlet property="postImage" destination="bCB-pG-zgA" id="SnC-GK-POr"/>
                                 </connections>

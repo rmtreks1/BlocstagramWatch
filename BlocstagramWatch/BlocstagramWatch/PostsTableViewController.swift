@@ -126,6 +126,8 @@ class PostsTableViewController: UITableViewController {
         let url = mediaItem.mediaURL
         imageView.hnk_setImageFromURL(url!)
         
+        cell.postCaption.text = mediaItem.caption as? String
+        
         
         return cell
     }
