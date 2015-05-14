@@ -128,8 +128,9 @@ class PostsTableViewController: UITableViewController {
         
         cell.postCaption.text = mediaItem.caption as? String
         
-        cell.postComments.text = String(mediaItem.comments.count)
-        
+        if mediaItem.comments.count > 0 {
+        cell.postComments.text = mediaItem.comments[0].text as? String
+        }
         
         return cell
     }
