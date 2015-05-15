@@ -25,11 +25,6 @@ class DataSource: NSObject {
     var pullToRefresh: Bool = false
 
     
-    override init() {
-        super.init()
-    }
-    
-    
     
     func retrieveDataFromInsta(){
         
