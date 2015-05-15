@@ -12,6 +12,7 @@ class PostsTableViewController: UITableViewController {
     
     var images = [UIImage]()
     
+    @IBOutlet var logoutButton: UIBarButtonItem!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -212,5 +213,6 @@ class PostsTableViewController: UITableViewController {
     
     
     
+    @IBOutlet var logOut: UIBarButtonItem!
     
 }
