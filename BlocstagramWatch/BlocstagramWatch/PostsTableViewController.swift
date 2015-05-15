@@ -15,7 +15,6 @@ class PostsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        println("view will appear")
         checkAndSetLoginIfNeeded()
     }
     
