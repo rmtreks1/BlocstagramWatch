@@ -26,7 +26,7 @@ class DataSource: NSObject {
 
     
     
-    func retrieveDataFromInsta(){
+    func retrieveDataFromInsta(successBlock: Void -> Void){
         
         println("******* retrieving data from insta *******")
         
@@ -48,7 +48,7 @@ class DataSource: NSObject {
                         println(self.mediaItems.count)
                         self.parseData()
                         println(self.parsedMediaItems.count) // checking items
-                        
+                        successBlock()
                         
                     }
                 }

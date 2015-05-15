@@ -28,7 +28,9 @@ class PostsTableViewController: UITableViewController {
         
         if DataSource.sharedInstance.accessToken != nil {
             println("******* viewWillAppear: retrieving data *******")
-            DataSource.sharedInstance.retrieveDataFromInsta()
+            DataSource.sharedInstance.retrieveDataFromInsta({
+                self.tableView.reloadData()
+            })
         }
 
 
@@ -44,7 +46,9 @@ class PostsTableViewController: UITableViewController {
         } else {
             println("******** checkAndSetLogin: retrieving data *******")
 //            DataSource.sharedInstance.retrieveDataFromInsta()
-            DataSource.sharedInstance.retrieveDataFromInsta()
+            DataSource.sharedInstance.retrieveDataFromInsta({
+                self.tableView.reloadData()
+            })
         }
     }
     
@@ -201,10 +205,13 @@ class PostsTableViewController: UITableViewController {
 
         
         DataSource.sharedInstance.pullToRefresh = true
-        DataSource.sharedInstance.retrieveDataFromInsta()
+        DataSource.sharedInstance.retrieveDataFromInsta({
+            self.tableView.reloadData()
+            refreshControl.endRefreshing()
+        })
         
-        self.tableView.reloadData()
-        refreshControl.endRefreshing()
+
+        
     }
     
     
