@@ -30,13 +30,15 @@ class DataSource: NSObject {
 
         
         // temporary cheat => login should be called BEFORE datasource
-        accessToken = "6516672.5e2dd10.41ed4ad67a2442e0ae130d3e13e88e40"
+//        accessToken = "6516672.5e2dd10.41ed4ad67a2442e0ae130d3e13e88e40"
 //        retrieveDataFromInsta()
     }
     
     
     
     func retrieveDataFromInsta(){
+        
+        println("******* retrieving data from insta *******")
         
         // to test have set as > but should be >=
         if parsedMediaItems.count >= 1{

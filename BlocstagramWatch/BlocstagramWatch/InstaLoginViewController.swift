@@ -16,6 +16,8 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println("***** instaLoginVC - viewDidLoad *****")
 
         // Do any additional setup after loading the view.
         webView.delegate = self

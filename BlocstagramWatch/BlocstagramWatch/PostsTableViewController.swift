@@ -16,6 +16,7 @@ class PostsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         checkAndSetLoginIfNeeded()
+
     }
     
     
@@ -23,13 +24,12 @@ class PostsTableViewController: UITableViewController {
     func checkAndSetLoginIfNeeded (){
         if DataSource.sharedInstance.accessToken == nil {
             println("no access token - need one")
-            
-            
-            
             let instaLoginVC = self.storyboard!.instantiateViewControllerWithIdentifier("InstaLoginVC") as! UIViewController
             self.presentViewController(instaLoginVC, animated: true, completion: nil)
-            
-            
+        } else {
+            println("******** checkAndSetLogin: retrieving data *******")
+//            DataSource.sharedInstance.retrieveDataFromInsta()
+            DataSource.sharedInstance.retrieveDataFromInsta()
         }
     }
     
@@ -43,24 +43,18 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        // sample images to test
-//        for var i = 1; i <= 10; i++ {
-//            let imageName = "\(i).jpg"
-//            let image = UIImage(named: imageName)
-//            if ((image) != nil) {
-//                self.images.append(image!)
-//            }
-//            
-//            println("number of images \(self.images.count)")
-//        }
-        
         // test shared dataSource
-        var datasourceCount = DataSource.sharedInstance.mediaItems.count
-        println("numer of images in datasource is \(datasourceCount)")
-        println("access token is \(DataSource.sharedInstance.accessToken)")
+//        var datasourceCount = DataSource.sharedInstance.mediaItems.count
+        
+        
+        if DataSource.sharedInstance.accessToken == nil {
+            println("***** viewDidLoad no access token *****")
+            checkAndSetLoginIfNeeded()
+        }
+        
         
         if DataSource.sharedInstance.accessToken != nil {
+            println("******* viewDidLoad: retrieving data *******")
             DataSource.sharedInstance.retrieveDataFromInsta()
         }
         
