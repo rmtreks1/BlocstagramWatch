@@ -31,7 +31,7 @@ class DataSource: NSObject {
         
         // temporary cheat => login should be called BEFORE datasource
         accessToken = "6516672.5e2dd10.41ed4ad67a2442e0ae130d3e13e88e40"
-        retrieveDataFromInsta()
+//        retrieveDataFromInsta()
     }
     
     

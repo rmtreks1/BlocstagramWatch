@@ -58,6 +58,11 @@ class PostsTableViewController: UITableViewController {
         // test shared dataSource
         var datasourceCount = DataSource.sharedInstance.mediaItems.count
         println("numer of images in datasource is \(datasourceCount)")
+        println("access token is \(DataSource.sharedInstance.accessToken)")
+        
+        if DataSource.sharedInstance.accessToken != nil {
+            DataSource.sharedInstance.retrieveDataFromInsta()
+        }
         
 
         // Uncomment the following line to preserve selection between presentations
