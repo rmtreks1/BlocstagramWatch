@@ -23,13 +23,13 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
         // Do any additional setup after loading the view.
         webView.delegate = self
         
-        let urlString: NSString = "https://instagram.com/oauth/authorize/?client_id=\(DataSource.sharedInstance.instagramClientID)&redirect_uri=\(redirectURI)&response_type=token"
+        let urlString: NSString = "https://instagram.com/oauth/authorize/?client_id=\(DataSource.sharedInstance.instagramClientID)&scope=likes+comments+relationships&redirect_uri=\(redirectURI)&response_type=token"
         
         
         let url = NSURL (string: urlString as String)
         let requestObj = NSURLRequest(URL: url!)
         webView.loadRequest(requestObj)
-//        SwiftSpinner.hide()
+
     }
     
     
