@@ -157,6 +157,9 @@ class PostsTableViewController: UITableViewController {
             let triggerPoint = mediaItemCount - 3
             if currentSection > triggerPoint {
                 println("fetch older items")
+                DataSource.sharedInstance.retrieveOlderDataFromInsta({
+                    println("retrieve old data finished")
+                })
             }
         }
     }

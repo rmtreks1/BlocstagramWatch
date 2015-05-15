@@ -21,6 +21,7 @@ class DataSource: NSObject {
     var accessToken: String?
     var parsedMediaItems: Array <Media> = []
     var minID = ""
+    var maxID = ""
     var isRefreshing: Bool = false
     var pullToRefresh: Bool = false
 
@@ -46,7 +47,7 @@ class DataSource: NSObject {
                         self.mediaItems = data
                         //                    println(self.mediaItems)
                         println(self.mediaItems.count)
-                        self.parseData()
+                        self.parseData("tempStringDeleteThis")
                         println(self.parsedMediaItems.count) // checking items
                         successBlock()
                         
@@ -61,7 +62,7 @@ class DataSource: NSObject {
     
     
     
-    func parseData(){
+    func parseData(requestType: String){
         
         let rawData = self.mediaItems
         var tempParsedMediaItems: Array <Media> = []
@@ -73,6 +74,13 @@ class DataSource: NSObject {
             
             tempParsedMediaItems.append(mediaItem)
         }
+        
+        if requestType == "parsingOlderData" {
+            println("parsing older data")
+            return
+        }
+        
+        
         if self.pullToRefresh {
             tempParsedMediaItems += self.parsedMediaItems
             self.parsedMediaItems = tempParsedMediaItems
@@ -82,6 +90,52 @@ class DataSource: NSObject {
         }
         self.isRefreshing = false
     }
+    
+    
+    
+    
+    
+    
+    
+    func retrieveOlderDataFromInsta(successBlock: Void -> Void){
+        
+        println("******* retrieving OLD data from insta *******")
+        
+        // to test have set as > but should be >=
+        if parsedMediaItems.count >= 1{
+            let maxMedia = parsedMediaItems[parsedMediaItems.count - 1] as Media
+            maxID = maxMedia.idNumber as! String
+        }
+        
+        
+        if self.accessToken != nil {
+            Alamofire.request(.GET, "https://api.instagram.com/v1/users/self/feed?access_token=\(accessToken!)&max_id=\(maxID)").responseJSON { (request, response, json, error) in
+                if json != nil {
+                    var jsonObj = JSON(json!)
+                    if let data = jsonObj["data"].arrayValue as [SwiftyJSON.JSON]?{
+                        self.mediaItems = data
+                        //                    println(self.mediaItems)
+                        println(self.mediaItems.count)
+                        self.parseData("parsingOlderData")
+                        println(self.parsedMediaItems.count) // checking items
+                        successBlock()
+                        
+                    }
+                }
+            }
+        }
+        
+        
+        
+    }
+
+    
+    
+    
+    
+    
+    
+    
     
     
     
