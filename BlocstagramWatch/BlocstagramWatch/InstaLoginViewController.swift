@@ -29,8 +29,17 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
         let url = NSURL (string: urlString as String)
         let requestObj = NSURLRequest(URL: url!)
         webView.loadRequest(requestObj)
+//        SwiftSpinner.hide()
+    }
+    
+    
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
         SwiftSpinner.hide()
     }
+    
+    
+    
 
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
