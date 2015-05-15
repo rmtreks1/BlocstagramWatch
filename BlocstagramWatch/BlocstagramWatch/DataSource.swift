@@ -45,7 +45,7 @@ class DataSource: NSObject {
         }
         
         
-        if !self.isRefreshing {
+        if !self.isRefreshing && self.accessToken != nil {
             self.isRefreshing = true
             Alamofire.request(.GET, "https://api.instagram.com/v1/users/self/feed?access_token=\(accessToken!)&min_id=\(minID)").responseJSON { (request, response, json, error) in
                 if json != nil {
