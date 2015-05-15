@@ -14,6 +14,7 @@ class PostsHeaderTableViewCell: UITableViewCell {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var likesButtonCounter: UIView!
+    @IBOutlet var likeButton: UIImageView!
     
     
     
@@ -38,9 +39,15 @@ class PostsHeaderTableViewCell: UITableViewCell {
         let imageView = self.profileImage as UIImageView
         let url = mediaItem.user?.profilePictureURL
         imageView.hnk_setImageFromURL(url!)
+    
+        if mediaItem.likeState! {
+            self.likeButton.image = UIImage(named: "heart-full")
+        } else {
+            self.likeButton.image = UIImage(named: "heart-empty")
+        }
         
-        
-        self.usernameLabel.text = mediaItem.user?.userName as? String    }
+        self.usernameLabel.text = mediaItem.user?.userName as? String
+    }
 
     
     

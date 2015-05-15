@@ -43,7 +43,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Dda-2Q-sYS" secondAttribute="bottom" id="2MN-HD-j6V"/>
                                                 <constraint firstAttribute="trailing" secondItem="Dda-2Q-sYS" secondAttribute="trailing" id="5gf-QI-0oA"/>
@@ -74,6 +73,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="likeButton" destination="Dda-2Q-sYS" id="pOw-8N-jaW"/>
                                     <outlet property="likesButtonCounter" destination="FRF-tO-7Ug" id="rkf-EG-VlX"/>
                                     <outlet property="profileImage" destination="T2C-rO-Had" id="BM3-Ln-fei"/>
                                     <outlet property="usernameLabel" destination="6Eq-lz-PZD" id="fi6-Xh-6hK"/>
