@@ -24,6 +24,15 @@ class DataSource: NSObject {
     var maxID = ""
     var isRefreshing: Bool = false
     var pullToRefresh: Bool = false
+    
+    
+    
+    
+    enum theRequestType {
+        case firstLoad
+        case pullToRefresh
+        case infiniteScroll
+    }
 
     
     
@@ -47,7 +56,7 @@ class DataSource: NSObject {
                         self.mediaItems = data
                         //                    println(self.mediaItems)
                         println(self.mediaItems.count)
-                        self.parseData("tempStringDeleteThis")
+                        self.parseData(theRequestType.firstLoad)
                         println(self.parsedMediaItems.count) // checking items
                         successBlock()
                         
@@ -62,7 +71,7 @@ class DataSource: NSObject {
     
     
     
-    func parseData(requestType: String){
+    func parseData(requestType: theRequestType){
         
         let rawData = self.mediaItems
         var tempParsedMediaItems: Array <Media> = []
@@ -75,7 +84,7 @@ class DataSource: NSObject {
             tempParsedMediaItems.append(mediaItem)
         }
         
-        if requestType == "parsingOlderData" {
+        if requestType == theRequestType.infiniteScroll {
             println("parsing older data with \(tempParsedMediaItems.count)")
             self.parsedMediaItems += tempParsedMediaItems
             
@@ -118,7 +127,7 @@ class DataSource: NSObject {
                         self.mediaItems = data
                         //                    println(self.mediaItems)
                         println(self.mediaItems.count)
-                        self.parseData("parsingOlderData")
+                        self.parseData(theRequestType.infiniteScroll)
                         println(self.parsedMediaItems.count) // checking items
                         successBlock()
                         
