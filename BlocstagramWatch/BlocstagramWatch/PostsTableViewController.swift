@@ -17,23 +17,23 @@ class PostsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         println("***** viewWillAppear *****")
-//        checkAndSetLoginIfNeeded()
-        
-        
-        
-        if DataSource.sharedInstance.accessToken == nil {
-            println("***** viewWillAppear no access token *****")
-            checkAndSetLoginIfNeeded()
-        }
-        
-        
-        if DataSource.sharedInstance.accessToken != nil {
-            println("******* viewWillAppear: retrieving data *******")
-            DataSource.sharedInstance.retrieveDataFromInsta({
-                self.tableView.reloadData()
-            })
-        }
-
+        checkAndSetLoginIfNeeded()
+//        
+//        
+//        
+//        if DataSource.sharedInstance.accessToken == nil {
+//            println("***** viewWillAppear no access token *****")
+//            checkAndSetLoginIfNeeded()
+//        }
+//        
+//        
+//        if DataSource.sharedInstance.accessToken != nil {
+//            println("******* viewWillAppear: retrieving data *******")
+//            DataSource.sharedInstance.retrieveDataFromInsta({
+//                self.tableView.reloadData()
+//            })
+//        }
+//
 
     }
     
