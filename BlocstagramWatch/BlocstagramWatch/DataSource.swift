@@ -144,7 +144,14 @@ class DataSource: NSObject {
     
     
     
-    
+    func userLikesMedia (mediaitem: Media){
+        
+        
+        let parameters = ["access_token": self.accessToken!]
+        
+        Alamofire.request(.POST, "https://api.instagram.com/v1/media/\(mediaitem.idNumber)/likes", parameters: parameters)
+        
+    }
     
     
     
