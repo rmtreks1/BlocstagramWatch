@@ -15,8 +15,9 @@
 		01AB22F71B02D33000707D5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AB22F61B02D33000707D5D /* Images.xcassets */; };
 		01AB22FA1B02D33000707D5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AB22F81B02D33000707D5D /* LaunchScreen.xib */; };
 		01AB23061B02D33000707D5D /* BlocstagramWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23051B02D33000707D5D /* BlocstagramWatchTests.swift */; };
-		01AB23101B02E02800707D5D /* TestImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 01AB230F1B02E02800707D5D /* TestImage.JPG */; };
+		01AB23101B02E02800707D5D /* TestImageOLD.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 01AB230F1B02E02800707D5D /* TestImageOLD.JPG */; };
 		01AB23121B02E32300707D5D /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23111B02E32300707D5D /* PostsTableViewCell.swift */; };
+		01D30AD21B05E40E00B34936 /* TestImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 01D30AD11B05E40E00B34936 /* TestImage.JPG */; };
 		01F8783D1B032471004DC14A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F8783C1B032471004DC14A /* User.swift */; };
 		01F8783F1B0324F3004DC14A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F8783E1B0324F3004DC14A /* Media.swift */; };
 		01F878411B032585004DC14A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F878401B032585004DC14A /* Comment.swift */; };
@@ -50,8 +51,9 @@
 		01AB22FF1B02D33000707D5D /* BlocstagramWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocstagramWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AB23041B02D33000707D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AB23051B02D33000707D5D /* BlocstagramWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocstagramWatchTests.swift; sourceTree = "<group>"; };
-		01AB230F1B02E02800707D5D /* TestImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.JPG; sourceTree = "<group>"; };
+		01AB230F1B02E02800707D5D /* TestImageOLD.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImageOLD.JPG; sourceTree = "<group>"; };
 		01AB23111B02E32300707D5D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		01D30AD11B05E40E00B34936 /* TestImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.JPG; sourceTree = "<group>"; };
 		01F8783C1B032471004DC14A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		01F8783E1B0324F3004DC14A /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		01F878401B032585004DC14A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -109,7 +111,8 @@
 				01AB22EF1B02D33000707D5D /* AppDelegate.swift */,
 				01AB22F11B02D33000707D5D /* ViewController.swift */,
 				01AB22F31B02D33000707D5D /* Main.storyboard */,
-				01AB230F1B02E02800707D5D /* TestImage.JPG */,
+				01AB230F1B02E02800707D5D /* TestImageOLD.JPG */,
+				01D30AD11B05E40E00B34936 /* TestImage.JPG */,
 				01FE1B841B030E030084AED6 /* Batman.jpg */,
 				01AB22F61B02D33000707D5D /* Images.xcassets */,
 				01AB22F81B02D33000707D5D /* LaunchScreen.xib */,
@@ -253,8 +256,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01AB23101B02E02800707D5D /* TestImage.JPG in Resources */,
+				01AB23101B02E02800707D5D /* TestImageOLD.JPG in Resources */,
 				01AB22F51B02D33000707D5D /* Main.storyboard in Resources */,
+				01D30AD21B05E40E00B34936 /* TestImage.JPG in Resources */,
 				01FE1B851B030E030084AED6 /* Batman.jpg in Resources */,
 				01AB22FA1B02D33000707D5D /* LaunchScreen.xib in Resources */,
 				01AB22F71B02D33000707D5D /* Images.xcassets in Resources */,
