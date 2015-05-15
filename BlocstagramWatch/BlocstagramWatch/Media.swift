@@ -22,6 +22,7 @@ class Media: NSObject {
 //    var comments: NSArray?
     var comments: Array <Comment> = []
     var likeState: Bool?
+    var likesCount: Int?
     
     
     
@@ -61,6 +62,9 @@ class Media: NSObject {
         }
      
         self.likeState = mediaDictionary["user_has_liked"].bool
+        
+        self.likesCount = mediaDictionary["likes"]["count"].int
+        
 
     }
     

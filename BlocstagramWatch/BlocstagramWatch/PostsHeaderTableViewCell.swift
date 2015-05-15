@@ -15,6 +15,7 @@ class PostsHeaderTableViewCell: UITableViewCell {
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var likesButtonCounter: UIView!
     @IBOutlet var likeButton: UIImageView!
+    @IBOutlet var likesCount: UILabel!
     
     
     
@@ -47,6 +48,10 @@ class PostsHeaderTableViewCell: UITableViewCell {
         }
         
         self.usernameLabel.text = mediaItem.user?.userName as? String
+        
+        if let tempCount = mediaItem.likesCount {
+            self.likesCount.text = String(tempCount)
+        }
     }
 
     

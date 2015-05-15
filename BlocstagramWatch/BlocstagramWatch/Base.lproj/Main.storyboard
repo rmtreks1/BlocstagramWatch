@@ -75,6 +75,7 @@
                                 <connections>
                                     <outlet property="likeButton" destination="Dda-2Q-sYS" id="pOw-8N-jaW"/>
                                     <outlet property="likesButtonCounter" destination="FRF-tO-7Ug" id="rkf-EG-VlX"/>
+                                    <outlet property="likesCount" destination="yDF-fO-JRx" id="sWt-vi-zMV"/>
                                     <outlet property="profileImage" destination="T2C-rO-Had" id="BM3-Ln-fei"/>
                                     <outlet property="usernameLabel" destination="6Eq-lz-PZD" id="fi6-Xh-6hK"/>
                                 </connections>
