@@ -41,10 +41,12 @@ class PostsTableViewController: UITableViewController {
     
     func checkAndSetLoginIfNeeded (){
         if DataSource.sharedInstance.accessToken == nil {
+            self.navigationItem.leftBarButtonItem = nil
             println("no access token - need one")
             let instaLoginVC = self.storyboard!.instantiateViewControllerWithIdentifier("InstaLoginVC") as! UIViewController
             self.presentViewController(instaLoginVC, animated: true, completion: nil)
         } else {
+            self.navigationItem.leftBarButtonItem = logoutButton
             println("******** checkAndSetLogin: retrieving data *******")
             DataSource.sharedInstance.retrieveDataFromInsta({
                 self.tableView.reloadData()
@@ -212,8 +214,27 @@ class PostsTableViewController: UITableViewController {
     
     @IBAction func logout(sender: UIBarButtonItem) {
         println("logout pressed")
+        DataSource.sharedInstance.accessToken = nil
+        DataSource.sharedInstance.parsedMediaItems = []
+        DataSource.sharedInstance.mediaItems = []
+        self.tableView.reloadData()
+        clearInstagramCookies()
+        checkAndSetLoginIfNeeded()
     }
     
     
-        
+    func clearInstagramCookies () {
+        var storage : NSHTTPCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+        for cookie in storage.cookies  as! [NSHTTPCookie]{
+            println(cookie.domain)
+            if let instaCookieFound = cookie.domain.rangeOfString("instagram.com") {
+                storage.deleteCookie(cookie)
+                println("deleted \(cookie.domain)")
+
+            }
+        }
+    }
+    
+    
+    
 }
