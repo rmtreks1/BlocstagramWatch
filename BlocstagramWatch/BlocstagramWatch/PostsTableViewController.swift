@@ -46,7 +46,6 @@ class PostsTableViewController: UITableViewController {
             self.presentViewController(instaLoginVC, animated: true, completion: nil)
         } else {
             println("******** checkAndSetLogin: retrieving data *******")
-//            DataSource.sharedInstance.retrieveDataFromInsta()
             DataSource.sharedInstance.retrieveDataFromInsta({
                 self.tableView.reloadData()
             })
@@ -211,8 +210,10 @@ class PostsTableViewController: UITableViewController {
         
     }
     
+    @IBAction func logout(sender: UIBarButtonItem) {
+        println("logout pressed")
+    }
     
     
-    @IBOutlet var logOut: UIBarButtonItem!
-    
+        
 }

@@ -122,7 +122,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="EGY-l9-DTK">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="uF4-Al-y97"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="uF4-Al-y97">
+                            <connections>
+                                <action selector="logout:" destination="zZg-iu-vKq" id="za5-Xh-WdZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj">
                             <connections>
                                 <segue destination="oBe-cC-wOc" kind="modal" id="HAb-VC-bZ6"/>
@@ -133,7 +137,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="logOut" destination="uF4-Al-y97" id="tKU-ml-h87"/>
                         <outlet property="logoutButton" destination="uF4-Al-y97" id="aJR-R4-XQs"/>
                     </connections>
                 </tableViewController>
