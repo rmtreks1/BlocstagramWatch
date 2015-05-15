@@ -29,10 +29,30 @@
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRF-tO-7Ug" userLabel="LikesButtonAndCounter">
                                             <rect key="frame" x="212" y="8" width="100" height="30"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-2Q-sYS">
+                                                    <rect key="frame" x="78" y="0.0" width="22" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="nEh-nk-7NS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDF-fO-JRx">
+                                                    <rect key="frame" x="8" y="7" width="65" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Dda-2Q-sYS" secondAttribute="bottom" id="2MN-HD-j6V"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dda-2Q-sYS" secondAttribute="trailing" id="5gf-QI-0oA"/>
+                                                <constraint firstItem="yDF-fO-JRx" firstAttribute="leading" secondItem="FRF-tO-7Ug" secondAttribute="leadingMargin" id="9ZP-ws-CbG"/>
+                                                <constraint firstItem="yDF-fO-JRx" firstAttribute="centerY" secondItem="Dda-2Q-sYS" secondAttribute="centerY" id="IN2-5L-qm7"/>
                                                 <constraint firstAttribute="width" constant="100" id="LD8-tU-gGm"/>
+                                                <constraint firstItem="Dda-2Q-sYS" firstAttribute="top" secondItem="FRF-tO-7Ug" secondAttribute="top" id="RBp-2b-les"/>
                                                 <constraint firstAttribute="height" constant="30" id="XiT-4I-Acg"/>
+                                                <constraint firstItem="Dda-2Q-sYS" firstAttribute="leading" secondItem="yDF-fO-JRx" secondAttribute="trailing" constant="5" id="g4i-DH-os0"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-lz-PZD" userLabel="Username">
@@ -223,7 +243,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TestImage.JPG" width="3071" height="1919"/>
+        <image name="TestImage.JPG" width="640" height="640"/>
+        <image name="heart-empty" width="28" height="27"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
