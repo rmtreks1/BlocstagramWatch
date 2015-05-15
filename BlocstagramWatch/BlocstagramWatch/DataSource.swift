@@ -76,7 +76,9 @@ class DataSource: NSObject {
         }
         
         if requestType == "parsingOlderData" {
-            println("parsing older data")
+            println("parsing older data with \(tempParsedMediaItems.count)")
+            self.parsedMediaItems += tempParsedMediaItems
+            
             return
         }
         

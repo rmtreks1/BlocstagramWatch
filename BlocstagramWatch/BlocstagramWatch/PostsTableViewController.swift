@@ -159,6 +159,7 @@ class PostsTableViewController: UITableViewController {
                 println("fetch older items")
                 DataSource.sharedInstance.retrieveOlderDataFromInsta({
                     println("retrieve old data finished")
+                    self.tableView.reloadData()
                 })
             }
         }
