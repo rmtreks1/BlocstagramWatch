@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Haneke
 import SwiftyJSON
+import SwiftSpinner
 
 class DataSource: NSObject {
    

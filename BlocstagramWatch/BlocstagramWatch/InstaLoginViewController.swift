@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import Foundation
+import SwiftSpinner
+
 
 class InstaLoginViewController: UIViewController, UIWebViewDelegate {
 
@@ -28,6 +29,7 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
         let url = NSURL (string: urlString as String)
         let requestObj = NSURLRequest(URL: url!)
         webView.loadRequest(requestObj)
+        SwiftSpinner.hide()
     }
 
     

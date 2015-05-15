@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class PostsTableViewController: UITableViewController {
     
@@ -40,6 +41,7 @@ class PostsTableViewController: UITableViewController {
     
     
     func checkAndSetLoginIfNeeded (){
+        SwiftSpinner.show("ET Phone Insta...")
         if DataSource.sharedInstance.accessToken == nil {
             self.navigationItem.leftBarButtonItem = nil
             println("no access token - need one")
@@ -48,8 +50,10 @@ class PostsTableViewController: UITableViewController {
         } else {
             self.navigationItem.leftBarButtonItem = logoutButton
             println("******** checkAndSetLogin: retrieving data *******")
+            SwiftSpinner.show("Getting goodies from Insta...")
             DataSource.sharedInstance.retrieveDataFromInsta({
                 self.tableView.reloadData()
+                SwiftSpinner.hide()
             })
         }
     }

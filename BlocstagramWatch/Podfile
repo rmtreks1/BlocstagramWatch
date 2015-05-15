@@ -5,3 +5,4 @@ use_frameworks!
 pod 'Alamofire', '~> 1.2'
 pod 'HanekeSwift'
 pod "SwiftyJSON", ">= 2.2"
+pod 'SwiftSpinner'
