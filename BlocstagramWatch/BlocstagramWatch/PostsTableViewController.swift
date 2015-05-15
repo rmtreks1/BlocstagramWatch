@@ -146,6 +146,24 @@ class PostsTableViewController: UITableViewController {
         return cell
     }
     
+    
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let currentSection = indexPath.section
+        let mediaItemCount = DataSource.sharedInstance.parsedMediaItems.count
+        println("\(currentSection) of \(mediaItemCount) ")
+        
+        if mediaItemCount > 5 {
+            let triggerPoint = mediaItemCount - 3
+            if currentSection > triggerPoint {
+                println("fetch older items")
+            }
+        }
+    }
+    
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
