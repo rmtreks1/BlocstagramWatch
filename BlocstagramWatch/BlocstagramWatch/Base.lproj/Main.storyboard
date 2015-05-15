@@ -150,7 +150,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj">
                             <connections>
-                                <segue destination="oBe-cC-wOc" kind="modal" id="HAb-VC-bZ6"/>
+                                <action selector="testOpeningInsta:" destination="zZg-iu-vKq" id="DuY-Zm-Gk4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

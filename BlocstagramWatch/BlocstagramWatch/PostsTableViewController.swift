@@ -262,5 +262,28 @@ class PostsTableViewController: UITableViewController {
     }
     
     
+    @IBAction func testOpeningInsta(sender: UIBarButtonItem) {
+        println("test opening insta")
+        
+        let testMediaID = DataSource.sharedInstance.parsedMediaItems[10].idNumber as! String
+        println(testMediaID)
+        println(DataSource.sharedInstance.accessToken)
+        
+        let instaURLString = "instagram://media?id=\(testMediaID)"
+        let instaURL = NSURL(string: instaURLString)
+        if UIApplication.sharedApplication().canOpenURL(instaURL!){
+            println("found insta")
+            UIApplication.sharedApplication().openURL(instaURL!)
+        } else {
+            println("no insta")
+        }
+        
+        
+//        NSURL *instagramURL = [NSURL URLWithString:@"instagram://location?id=1"];
+//        if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+//            [[UIApplication sharedApplication] openURL:instagramURL];
+//        }
+        
+    }
     
 }
