@@ -37,6 +37,8 @@ class PostsHeaderTableViewCell: UITableViewCell {
     
     func setMedia(mediaItem: Media){
         
+        resetCell()
+        
         let imageView = self.profileImage as UIImageView
         let url = mediaItem.user?.profilePictureURL
         imageView.hnk_setImageFromURL(url!)
@@ -55,6 +57,14 @@ class PostsHeaderTableViewCell: UITableViewCell {
     }
 
     
+    func resetCell(){
+        self.profileImage.image = UIImage(named: "TestImage.JPG")
+        self.usernameLabel.text = ""
+        self.likeButton.image = UIImage(named: "heart-empty")
+        self.likesCount.text = ""
+        
+    }
+
     
     
 }

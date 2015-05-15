@@ -32,6 +32,9 @@ class PostsTableViewCell: UITableViewCell {
     
     func setMedia(mediaItem: Media){
         
+        resetCell()
+        
+        
         let imageView = self.postImage
         let url = mediaItem.mediaURL
         imageView.hnk_setImageFromURL(url!)
@@ -43,6 +46,13 @@ class PostsTableViewCell: UITableViewCell {
         }
     }
     
+    
+    func resetCell(){
+        self.postImage.image = UIImage(named: "TestImage.JPG")
+        self.postComments.text = ""
+        self.postCaption.text = ""
+        
+    }
     
 
 }
