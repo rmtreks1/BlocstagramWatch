@@ -15,7 +15,22 @@ class PostsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        checkAndSetLoginIfNeeded()
+        println("***** viewWillAppear *****")
+//        checkAndSetLoginIfNeeded()
+        
+        
+        
+        if DataSource.sharedInstance.accessToken == nil {
+            println("***** viewWillAppear no access token *****")
+            checkAndSetLoginIfNeeded()
+        }
+        
+        
+        if DataSource.sharedInstance.accessToken != nil {
+            println("******* viewWillAppear: retrieving data *******")
+            DataSource.sharedInstance.retrieveDataFromInsta()
+        }
+
 
     }
     
@@ -45,18 +60,18 @@ class PostsTableViewController: UITableViewController {
         
         // test shared dataSource
 //        var datasourceCount = DataSource.sharedInstance.mediaItems.count
-        
-        
-        if DataSource.sharedInstance.accessToken == nil {
-            println("***** viewDidLoad no access token *****")
-            checkAndSetLoginIfNeeded()
-        }
-        
-        
-        if DataSource.sharedInstance.accessToken != nil {
-            println("******* viewDidLoad: retrieving data *******")
-            DataSource.sharedInstance.retrieveDataFromInsta()
-        }
+//        
+//        
+//        if DataSource.sharedInstance.accessToken == nil {
+//            println("***** viewDidLoad no access token *****")
+//            checkAndSetLoginIfNeeded()
+//        }
+//        
+//        
+//        if DataSource.sharedInstance.accessToken != nil {
+//            println("******* viewDidLoad: retrieving data *******")
+//            DataSource.sharedInstance.retrieveDataFromInsta()
+//        }
         
 
         // Uncomment the following line to preserve selection between presentations
