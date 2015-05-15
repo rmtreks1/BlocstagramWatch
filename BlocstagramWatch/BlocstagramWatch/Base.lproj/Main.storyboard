@@ -121,9 +121,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="EGY-l9-DTK">
-                        <barButtonItem key="leftBarButtonItem" title="Reload" id="uF4-Al-y97">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="uF4-Al-y97">
                             <connections>
-                                <action selector="reloadButton:" destination="zZg-iu-vKq" id="mtH-eG-4MI"/>
+                                <segue destination="RpQ-oi-tMR" kind="modal" id="SdM-xC-ydT"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj">

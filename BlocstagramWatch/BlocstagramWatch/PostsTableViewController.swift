@@ -193,10 +193,6 @@ class PostsTableViewController: UITableViewController {
     
     
     
-    @IBAction func reloadButton(sender: UIBarButtonItem) {
-        self.tableView.reloadData()
-    }
-    
     
     
     func handleRefresh(refreshControl: UIRefreshControl) {
