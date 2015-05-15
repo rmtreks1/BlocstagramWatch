@@ -38,6 +38,10 @@ class InstaLoginViewController: UIViewController, UIWebViewDelegate {
         SwiftSpinner.hide()
     }
     
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        SwiftSpinner.show("Something is not right", animated: false)
+    }
+    
     
     
 
