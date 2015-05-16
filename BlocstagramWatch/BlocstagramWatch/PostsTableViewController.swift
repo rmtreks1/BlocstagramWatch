@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftSpinner
+import Foundation
 
 class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate {
     
@@ -91,6 +92,7 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:", name: "RefreshData", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -309,12 +311,14 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
                 
             }
 
-            
-            
-            
-            
-            
         }
+    }
+    
+    
+    
+    func refreshData(notification: NSNotification){
+        println("refresh data")
+        checkAndSetLoginIfNeeded()
     }
     
 }
