@@ -10,7 +10,7 @@ import UIKit
 import SwiftSpinner
 import Foundation
 
-class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate {
+class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate, UIImagePickerControllerDelegate {
     
     var images = [UIImage]()
     
@@ -20,23 +20,6 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         super.viewWillAppear(true)
         println("***** viewWillAppear *****")
         checkAndSetLoginIfNeeded()
-//        
-//        
-//        
-//        if DataSource.sharedInstance.accessToken == nil {
-//            println("***** viewWillAppear no access token *****")
-//            checkAndSetLoginIfNeeded()
-//        }
-//        
-//        
-//        if DataSource.sharedInstance.accessToken != nil {
-//            println("******* viewWillAppear: retrieving data *******")
-//            DataSource.sharedInstance.retrieveDataFromInsta({
-//                self.tableView.reloadData()
-//            })
-//        }
-//
-
     }
     
     
@@ -73,28 +56,7 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // test shared dataSource
-//        var datasourceCount = DataSource.sharedInstance.mediaItems.count
-//        
-//        
-//        if DataSource.sharedInstance.accessToken == nil {
-//            println("***** viewDidLoad no access token *****")
-//            checkAndSetLoginIfNeeded()
-//        }
-//        
-//        
-//        if DataSource.sharedInstance.accessToken != nil {
-//            println("******* viewDidLoad: retrieving data *******")
-//            DataSource.sharedInstance.retrieveDataFromInsta()
-//        }
-        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:", name: "RefreshData", object: nil)
@@ -303,5 +265,15 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         println("refresh data")
         checkAndSetLoginIfNeeded()
     }
+    
+    
+    
+    @IBAction func cameraButtonPressed(sender: UIBarButtonItem) {
+        println("camera button pressed")
+    }
+    
+    
+    
+    
     
 }
