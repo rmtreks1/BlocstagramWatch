@@ -40,6 +40,11 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
     }
     
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
+    
     
     func checkAndSetLoginIfNeeded (){
         SwiftSpinner.show("ET Phone Insta...")
