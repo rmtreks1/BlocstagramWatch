@@ -1,5 +1,5 @@
 //
-//  PostsTableViewCell.swift
+//  PostsHeaderTableViewCell.swift
 //  BlocstagramWatch
 //
 //  Created by Roshan Mahanama on 13/05/2015.
@@ -8,12 +8,15 @@
 
 import UIKit
 
-class PostsTableViewCell: UITableViewCell {
+class PostsHeaderTableViewCell: UITableViewCell {
     
     
-    @IBOutlet var postImage: UIImageView!
-    @IBOutlet var postComments: UILabel!
-    @IBOutlet var postCaption: UILabel!
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var likesButtonCounter: UIView!
+    
+    
+    
     
     
     
@@ -28,21 +31,17 @@ class PostsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     
     func setMedia(mediaItem: Media){
         
-        let imageView = self.postImage
-        let url = mediaItem.mediaURL
+        let imageView = self.profileImage as UIImageView
+        let url = mediaItem.user?.profilePictureURL
         imageView.hnk_setImageFromURL(url!)
         
-        self.postCaption.text = mediaItem.caption as? String
         
-        if mediaItem.comments.count > 0 {
-            self.postComments.text = mediaItem.comments[0].text as? String
-        }
-    }
-    
-    
+        self.usernameLabel.text = mediaItem.user?.userName as? String    }
 
+    
+    
 }

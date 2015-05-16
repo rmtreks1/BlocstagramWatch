@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013C6B981B034DF0006D6B8E /* InstaLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */; };
+		014766861B03366E00248B0D /* OldLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014766851B03366E00248B0D /* OldLoginViewController.swift */; };
 		01AB22F01B02D33000707D5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB22EF1B02D33000707D5D /* AppDelegate.swift */; };
 		01AB22F21B02D33000707D5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB22F11B02D33000707D5D /* ViewController.swift */; };
 		01AB22F51B02D33000707D5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AB22F31B02D33000707D5D /* Main.storyboard */; };
 		01AB22F71B02D33000707D5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AB22F61B02D33000707D5D /* Images.xcassets */; };
 		01AB22FA1B02D33000707D5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AB22F81B02D33000707D5D /* LaunchScreen.xib */; };
 		01AB23061B02D33000707D5D /* BlocstagramWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23051B02D33000707D5D /* BlocstagramWatchTests.swift */; };
-		01AB23101B02E02800707D5D /* TestImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 01AB230F1B02E02800707D5D /* TestImage.JPG */; };
 		01AB23121B02E32300707D5D /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23111B02E32300707D5D /* PostsTableViewCell.swift */; };
+		01D30AD21B05E40E00B34936 /* TestImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 01D30AD11B05E40E00B34936 /* TestImage.JPG */; };
+		01F8783D1B032471004DC14A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F8783C1B032471004DC14A /* User.swift */; };
+		01F8783F1B0324F3004DC14A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F8783E1B0324F3004DC14A /* Media.swift */; };
+		01F878411B032585004DC14A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F878401B032585004DC14A /* Comment.swift */; };
+		01F878431B0325E5004DC14A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F878421B0325E5004DC14A /* DataSource.swift */; };
+		01FE1B811B0301AE0084AED6 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */; };
+		01FE1B831B03087E0084AED6 /* PostsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */; };
+		01FE1B851B030E030084AED6 /* Batman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01FE1B841B030E030084AED6 /* Batman.jpg */; };
+		FA4C14A535E95D53936DA73B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F89B1B092C139675EF2FA698 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaLoginViewController.swift; sourceTree = "<group>"; };
+		014766851B03366E00248B0D /* OldLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldLoginViewController.swift; sourceTree = "<group>"; };
 		01AB22EA1B02D33000707D5D /* BlocstagramWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocstagramWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AB22EE1B02D33000707D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AB22EF1B02D33000707D5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +50,18 @@
 		01AB22FF1B02D33000707D5D /* BlocstagramWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocstagramWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AB23041B02D33000707D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AB23051B02D33000707D5D /* BlocstagramWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocstagramWatchTests.swift; sourceTree = "<group>"; };
-		01AB230F1B02E02800707D5D /* TestImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.JPG; sourceTree = "<group>"; };
 		01AB23111B02E32300707D5D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		01D30AD11B05E40E00B34936 /* TestImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.JPG; sourceTree = "<group>"; };
+		01F8783C1B032471004DC14A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		01F8783E1B0324F3004DC14A /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		01F878401B032585004DC14A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		01F878421B0325E5004DC14A /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		01FE1B841B030E030084AED6 /* Batman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Batman.jpg; sourceTree = "<group>"; };
+		0BDD8233FCA4655C6A0BA978 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7C7ABD79951BF4D61D361142 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F89B1B092C139675EF2FA698 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4C14A535E95D53936DA73B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +89,8 @@
 				01AB22EC1B02D33000707D5D /* BlocstagramWatch */,
 				01AB23021B02D33000707D5D /* BlocstagramWatchTests */,
 				01AB22EB1B02D33000707D5D /* Products */,
+				9D7281DD9836802F9392E7CB /* Pods */,
+				D160FD94F460C940FE2BF577 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,11 +109,20 @@
 				01AB22EF1B02D33000707D5D /* AppDelegate.swift */,
 				01AB22F11B02D33000707D5D /* ViewController.swift */,
 				01AB22F31B02D33000707D5D /* Main.storyboard */,
-				01AB230F1B02E02800707D5D /* TestImage.JPG */,
+				01D30AD11B05E40E00B34936 /* TestImage.JPG */,
+				01FE1B841B030E030084AED6 /* Batman.jpg */,
 				01AB22F61B02D33000707D5D /* Images.xcassets */,
 				01AB22F81B02D33000707D5D /* LaunchScreen.xib */,
 				01AB22ED1B02D33000707D5D /* Supporting Files */,
 				01AB23111B02E32300707D5D /* PostsTableViewCell.swift */,
+				01FE1B801B0301AE0084AED6 /* PostsTableViewController.swift */,
+				01FE1B821B03087E0084AED6 /* PostsHeaderTableViewCell.swift */,
+				01F8783C1B032471004DC14A /* User.swift */,
+				01F8783E1B0324F3004DC14A /* Media.swift */,
+				01F878401B032585004DC14A /* Comment.swift */,
+				01F878421B0325E5004DC14A /* DataSource.swift */,
+				014766851B03366E00248B0D /* OldLoginViewController.swift */,
+				013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */,
 			);
 			path = BlocstagramWatch;
 			sourceTree = "<group>";
@@ -118,6 +152,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9D7281DD9836802F9392E7CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BDD8233FCA4655C6A0BA978 /* Pods.debug.xcconfig */,
+				7C7ABD79951BF4D61D361142 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D160FD94F460C940FE2BF577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F89B1B092C139675EF2FA698 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01AB23091B02D33000707D5D /* Build configuration list for PBXNativeTarget "BlocstagramWatch" */;
 			buildPhases = (
+				605E934BDA302496C1F40490 /* Check Pods Manifest.lock */,
 				01AB22E61B02D33000707D5D /* Sources */,
 				01AB22E71B02D33000707D5D /* Frameworks */,
 				01AB22E81B02D33000707D5D /* Resources */,
+				1D1084AE8E9AF27147EB59DB /* Embed Pods Frameworks */,
+				A8010ACA3EA6366522F328FB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,8 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01AB23101B02E02800707D5D /* TestImage.JPG in Resources */,
 				01AB22F51B02D33000707D5D /* Main.storyboard in Resources */,
+				01D30AD21B05E40E00B34936 /* TestImage.JPG in Resources */,
+				01FE1B851B030E030084AED6 /* Batman.jpg in Resources */,
 				01AB22FA1B02D33000707D5D /* LaunchScreen.xib in Resources */,
 				01AB22F71B02D33000707D5D /* Images.xcassets in Resources */,
 			);
@@ -215,13 +270,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D1084AE8E9AF27147EB59DB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		605E934BDA302496C1F40490 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A8010ACA3EA6366522F328FB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01AB22E61B02D33000707D5D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FE1B831B03087E0084AED6 /* PostsHeaderTableViewCell.swift in Sources */,
 				01AB23121B02E32300707D5D /* PostsTableViewCell.swift in Sources */,
+				01F8783F1B0324F3004DC14A /* Media.swift in Sources */,
+				01F878431B0325E5004DC14A /* DataSource.swift in Sources */,
+				01F878411B032585004DC14A /* Comment.swift in Sources */,
+				013C6B981B034DF0006D6B8E /* InstaLoginViewController.swift in Sources */,
+				01F8783D1B032471004DC14A /* User.swift in Sources */,
+				01FE1B811B0301AE0084AED6 /* PostsTableViewController.swift in Sources */,
 				01AB22F21B02D33000707D5D /* ViewController.swift in Sources */,
+				014766861B03366E00248B0D /* OldLoginViewController.swift in Sources */,
 				01AB22F01B02D33000707D5D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +458,7 @@
 		};
 		01AB230A1B02D33000707D5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BDD8233FCA4655C6A0BA978 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -358,6 +470,7 @@
 		};
 		01AB230B1B02D33000707D5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7ABD79951BF4D61D361142 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -420,6 +533,7 @@
 				01AB230B1B02D33000707D5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01AB230C1B02D33000707D5D /* Build configuration list for PBXNativeTarget "BlocstagramWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +542,7 @@
 				01AB230E1B02D33000707D5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
