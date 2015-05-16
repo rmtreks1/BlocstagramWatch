@@ -10,7 +10,7 @@ import UIKit
 import SwiftSpinner
 import Foundation
 
-class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate, UIImagePickerControllerDelegate {
+class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var images = [UIImage]()
     
@@ -288,6 +288,7 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         let libraryAction = UIAlertAction(title: "Choose image from library", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             println("library")
+            self.presentLibrary()
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -303,6 +304,15 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         optionMenu.addAction(cancelAction)
         
         self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    
+    func presentLibrary(){
+        var imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+        imagePickerController.allowsEditing = true
+        self.presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
     
