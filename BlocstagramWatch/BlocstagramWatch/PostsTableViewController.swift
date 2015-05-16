@@ -301,6 +301,12 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
                 UIApplication.sharedApplication().openURL(instaURL!)
             } else {
                 println("no insta")
+                
+                
+                let alertView = UIAlertController(title: "Oops Can't Support Liking", message: "You must have instagram installed to like a photo", preferredStyle: .Alert)
+                alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                presentViewController(alertView, animated: true, completion: nil)
+                
             }
 
             
