@@ -17,6 +17,7 @@ class PostsHeaderTableViewCell: UITableViewCell {
 //    @IBOutlet var likeButton: UIImageView!
     @IBOutlet var likesCount: UILabel!
     @IBOutlet var likeButton: UIButton!
+    var mediaItem: Media?
     
     
     
@@ -57,6 +58,8 @@ class PostsHeaderTableViewCell: UITableViewCell {
         if let tempCount = mediaItem.likesCount {
             self.likesCount.text = String(tempCount)
         }
+        
+        self.mediaItem = mediaItem
     }
 
     
@@ -73,8 +76,24 @@ class PostsHeaderTableViewCell: UITableViewCell {
     
     @IBAction func likeButtonPressed(sender: UIButton) {
         println("like button pressed")
+        
+        let testMediaID = self.mediaItem!.idNumber as! String
+        
+        // testing that data coming through
+        println(testMediaID)
+        println(DataSource.sharedInstance.accessToken)
+        
+        let instaURLString = "instagram://media?id=\(testMediaID)"
+        let instaURL = NSURL(string: instaURLString)
+        if UIApplication.sharedApplication().canOpenURL(instaURL!){
+            println("found insta")
+            UIApplication.sharedApplication().openURL(instaURL!)
+        } else {
+            println("no insta")
+        }
+
+        
     }
-    
     
     
     
