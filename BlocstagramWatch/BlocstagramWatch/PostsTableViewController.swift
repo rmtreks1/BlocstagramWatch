@@ -273,10 +273,14 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         
         // check if device supports camera
         
+        let cameraAvailable = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        println(cameraAvailable)
+        
+        
         
         // action sheet
         
-        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        let optionMenu = UIAlertController(title: nil, message: "Let's Post some Moments", preferredStyle: .ActionSheet)
         let cameraAction = UIAlertAction(title: "Take a Picture", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             println("camera")
@@ -290,7 +294,11 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
             println("Cancelled")
         })
         
-        optionMenu.addAction(cameraAction)
+        
+        if cameraAvailable{
+            optionMenu.addAction(cameraAction)
+        }
+        
         optionMenu.addAction(libraryAction)
         optionMenu.addAction(cancelAction)
         
