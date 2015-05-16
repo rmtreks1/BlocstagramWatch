@@ -289,9 +289,25 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
     
     
     
-    func likeButtonPressed(cell: PostsHeaderTableViewCell) {
-        if let id = cell.mediaItem?.idNumber {
-            println(id)
+    func likeButtonPressed(headerCell: PostsHeaderTableViewCell) {
+        if let MediaID = headerCell.mediaItem?.idNumber {
+            println(MediaID)
+
+            // opening Insta
+            let instaURLString = "instagram://media?id=\(MediaID)"
+            let instaURL = NSURL(string: instaURLString)
+            if UIApplication.sharedApplication().canOpenURL(instaURL!){
+                println("found insta")
+                UIApplication.sharedApplication().openURL(instaURL!)
+            } else {
+                println("no insta")
+            }
+
+            
+            
+            
+            
+            
         }
     }
     

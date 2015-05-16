@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol PostsHeaderTableViewCellDelegate {
-    func likeButtonPressed (cell: PostsHeaderTableViewCell)
+    func likeButtonPressed (headerCell: PostsHeaderTableViewCell)
 }
 
 
