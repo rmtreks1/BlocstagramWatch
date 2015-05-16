@@ -14,8 +14,9 @@ class PostsHeaderTableViewCell: UITableViewCell {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var likesButtonCounter: UIView!
-    @IBOutlet var likeButton: UIImageView!
+//    @IBOutlet var likeButton: UIImageView!
     @IBOutlet var likesCount: UILabel!
+    @IBOutlet var likeButton: UIButton!
     
     
     
@@ -44,9 +45,11 @@ class PostsHeaderTableViewCell: UITableViewCell {
         imageView.hnk_setImageFromURL(url!)
     
         if mediaItem.likeState! {
-            self.likeButton.image = UIImage(named: "heart-full")
+//            self.likeButton.image = UIImage(named: "heart-full")
+            self.likeButton.setImage(UIImage(named: "heart-full"), forState: UIControlState.Normal)
         } else {
-            self.likeButton.image = UIImage(named: "heart-empty")
+//            self.likeButton.image = UIImage(named: "heart-empty")
+            self.likeButton.setImage(UIImage(named: "heart-empty"), forState: UIControlState.Normal)
         }
         
         self.usernameLabel.text = mediaItem.user?.userName as? String
@@ -60,11 +63,19 @@ class PostsHeaderTableViewCell: UITableViewCell {
     func resetCell(){
         self.profileImage.image = UIImage(named: "TestImage.JPG")
         self.usernameLabel.text = ""
-        self.likeButton.image = UIImage(named: "heart-empty")
+//        self.likeButton.image = UIImage(named: "heart-empty")
         self.likesCount.text = ""
+        self.likeButton.setImage(UIImage(named: "heart-empty"), forState: UIControlState.Normal)
         
     }
 
+    
+    
+    @IBAction func likeButtonPressed(sender: UIButton) {
+        println("like button pressed")
+    }
+    
+    
     
     
 }

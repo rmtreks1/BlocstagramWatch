@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="49" id="tCR-Yi-XEc" customClass="PostsHeaderTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="49" id="tCR-Yi-XEc" customClass="PostsHeaderTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCR-Yi-XEc" id="cQt-Dk-fZY">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -30,28 +30,35 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRF-tO-7Ug" userLabel="LikesButtonAndCounter">
                                             <rect key="frame" x="212" y="8" width="100" height="30"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-2Q-sYS">
-                                                    <rect key="frame" x="78" y="0.0" width="22" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="22" id="nEh-nk-7NS"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDF-fO-JRx">
-                                                    <rect key="frame" x="8" y="7" width="65" height="17"/>
+                                                    <rect key="frame" x="8" y="0.0" width="65" height="30"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUS-Jx-f6z">
+                                                    <rect key="frame" x="78" y="3" width="22" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="u2J-DV-mCZ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="heart-empty">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="likeButtonPressed:" destination="tCR-Yi-XEc" eventType="touchUpInside" id="7ou-gL-QIj"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Dda-2Q-sYS" secondAttribute="bottom" id="2MN-HD-j6V"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dda-2Q-sYS" secondAttribute="trailing" id="5gf-QI-0oA"/>
+                                                <constraint firstItem="yDF-fO-JRx" firstAttribute="top" secondItem="FRF-tO-7Ug" secondAttribute="top" id="7Eg-Ed-j2I"/>
                                                 <constraint firstItem="yDF-fO-JRx" firstAttribute="leading" secondItem="FRF-tO-7Ug" secondAttribute="leadingMargin" id="9ZP-ws-CbG"/>
-                                                <constraint firstItem="yDF-fO-JRx" firstAttribute="centerY" secondItem="Dda-2Q-sYS" secondAttribute="centerY" id="IN2-5L-qm7"/>
+                                                <constraint firstItem="EUS-Jx-f6z" firstAttribute="leading" secondItem="yDF-fO-JRx" secondAttribute="trailing" constant="5" id="AVG-fK-urH"/>
                                                 <constraint firstAttribute="width" constant="100" id="LD8-tU-gGm"/>
-                                                <constraint firstItem="Dda-2Q-sYS" firstAttribute="top" secondItem="FRF-tO-7Ug" secondAttribute="top" id="RBp-2b-les"/>
+                                                <constraint firstItem="EUS-Jx-f6z" firstAttribute="top" secondItem="FRF-tO-7Ug" secondAttribute="top" constant="3" id="Nrj-pW-cfx"/>
+                                                <constraint firstAttribute="bottom" secondItem="EUS-Jx-f6z" secondAttribute="bottom" constant="3" id="XcR-Am-1OW"/>
                                                 <constraint firstAttribute="height" constant="30" id="XiT-4I-Acg"/>
-                                                <constraint firstItem="Dda-2Q-sYS" firstAttribute="leading" secondItem="yDF-fO-JRx" secondAttribute="trailing" constant="5" id="g4i-DH-os0"/>
+                                                <constraint firstAttribute="trailing" secondItem="EUS-Jx-f6z" secondAttribute="trailing" id="jeM-HS-Lz3"/>
+                                                <constraint firstAttribute="bottom" secondItem="yDF-fO-JRx" secondAttribute="bottom" id="krC-QJ-QaE"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-lz-PZD" userLabel="Username">
@@ -73,7 +80,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="likeButton" destination="Dda-2Q-sYS" id="pOw-8N-jaW"/>
+                                    <outlet property="likeButton" destination="EUS-Jx-f6z" id="9l0-Gd-85o"/>
                                     <outlet property="likesButtonCounter" destination="FRF-tO-7Ug" id="rkf-EG-VlX"/>
                                     <outlet property="likesCount" destination="yDF-fO-JRx" id="sWt-vi-zMV"/>
                                     <outlet property="profileImage" destination="T2C-rO-Had" id="BM3-Ln-fei"/>
