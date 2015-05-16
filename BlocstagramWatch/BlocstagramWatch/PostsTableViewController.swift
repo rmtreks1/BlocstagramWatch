@@ -315,8 +315,16 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         self.presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        let selectedImage = image
+    }
     
-    
+
+    func imagePickerControllerDidCancel(picker:UIImagePickerController)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
     
