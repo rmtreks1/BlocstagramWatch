@@ -270,7 +270,33 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
     
     @IBAction func cameraButtonPressed(sender: UIBarButtonItem) {
         println("camera button pressed")
+        
+        // check if device supports camera
+        
+        
+        // action sheet
+        
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        let cameraAction = UIAlertAction(title: "Take a Picture", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("camera")
+        })
+        let libraryAction = UIAlertAction(title: "Choose image from library", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("library")
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("Cancelled")
+        })
+        
+        optionMenu.addAction(cameraAction)
+        optionMenu.addAction(libraryAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
     }
+    
     
     
     
