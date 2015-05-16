@@ -9,7 +9,7 @@
 import UIKit
 import SwiftSpinner
 
-class PostsTableViewController: UITableViewController {
+class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate {
     
     var images = [UIImage]()
     
@@ -115,6 +115,7 @@ class PostsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = self.tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! PostsHeaderTableViewCell
+        headerCell.delegate = self
         
         let mediaItem = DataSource.sharedInstance.parsedMediaItems[section]
         headerCell.setMedia(mediaItem)
@@ -284,6 +285,14 @@ class PostsTableViewController: UITableViewController {
 //            [[UIApplication sharedApplication] openURL:instagramURL];
 //        }
         
+    }
+    
+    
+    
+    func likeButtonPressed(cell: PostsHeaderTableViewCell) {
+        if let id = cell.mediaItem?.idNumber {
+            println(id)
+        }
     }
     
 }

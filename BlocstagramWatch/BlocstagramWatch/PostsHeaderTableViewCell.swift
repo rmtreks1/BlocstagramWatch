@@ -8,6 +8,14 @@
 
 import UIKit
 
+
+protocol PostsHeaderTableViewCellDelegate {
+    func likeButtonPressed (cell: PostsHeaderTableViewCell)
+}
+
+
+
+
 class PostsHeaderTableViewCell: UITableViewCell {
     
     
@@ -18,7 +26,7 @@ class PostsHeaderTableViewCell: UITableViewCell {
     @IBOutlet var likesCount: UILabel!
     @IBOutlet var likeButton: UIButton!
     var mediaItem: Media?
-    
+    var delegate: PostsHeaderTableViewCellDelegate?
     
     
     
@@ -77,20 +85,29 @@ class PostsHeaderTableViewCell: UITableViewCell {
     @IBAction func likeButtonPressed(sender: UIButton) {
         println("like button pressed")
         
-        let testMediaID = self.mediaItem!.idNumber as! String
-        
-        // testing that data coming through
-        println(testMediaID)
-        println(DataSource.sharedInstance.accessToken)
-        
-        let instaURLString = "instagram://media?id=\(testMediaID)"
-        let instaURL = NSURL(string: instaURLString)
-        if UIApplication.sharedApplication().canOpenURL(instaURL!){
-            println("found insta")
-            UIApplication.sharedApplication().openURL(instaURL!)
-        } else {
-            println("no insta")
+
+        // delegate
+        if let delegate = self.delegate {
+            delegate.likeButtonPressed(self)
         }
+        
+        
+//        
+//        
+//        let testMediaID = self.mediaItem!.idNumber as! String
+//        
+//        // testing that data coming through
+//        println(testMediaID)
+//        println(DataSource.sharedInstance.accessToken)
+//        
+//        let instaURLString = "instagram://media?id=\(testMediaID)"
+//        let instaURL = NSURL(string: instaURLString)
+//        if UIApplication.sharedApplication().canOpenURL(instaURL!){
+//            println("found insta")
+//            UIApplication.sharedApplication().openURL(instaURL!)
+//        } else {
+//            println("no insta")
+//        }
 
         
     }
