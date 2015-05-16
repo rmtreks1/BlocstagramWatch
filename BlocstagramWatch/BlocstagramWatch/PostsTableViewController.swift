@@ -9,6 +9,7 @@
 import UIKit
 import SwiftSpinner
 import Foundation
+import MobileCoreServices
 
 class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -284,6 +285,7 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         let cameraAction = UIAlertAction(title: "Take a Picture", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             println("camera")
+            self.captureWithCamera()
         })
         let libraryAction = UIAlertAction(title: "Choose image from library", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -311,19 +313,44 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         var imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
-        imagePickerController.allowsEditing = true
+        imagePickerController.allowsEditing = false
         self.presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
+    
+    
+    func captureWithCamera(){
+        var imgCap = UIImagePickerController()
+        imgCap.delegate = self
+        imgCap.sourceType = UIImagePickerControllerSourceType.Camera;
+        imgCap.mediaTypes = [kUTTypeImage]
+        imgCap.allowsEditing = false
+        
+        self.presentViewController(imgCap, animated: true, completion: nil)
+    }
+    
+    
+    
+    
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        let selectedImage = image
+        if let imagePicked = image {
+            println("image captured")
+        }
+        self.sendImageToInstagram(image)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 
     func imagePickerControllerDidCancel(picker:UIImagePickerController)
     {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
+    func sendImageToInstagram (image: UIImage) {
+        println("send image to insta")
     }
     
     
