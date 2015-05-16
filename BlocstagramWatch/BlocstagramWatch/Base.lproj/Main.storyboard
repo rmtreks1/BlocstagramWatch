@@ -155,11 +155,7 @@
                                 <action selector="logout:" destination="zZg-iu-vKq" id="za5-Xh-WdZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj">
-                            <connections>
-                                <action selector="testOpeningInsta:" destination="zZg-iu-vKq" id="DuY-Zm-Gk4"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj"/>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Wmk-vN-8YW">
                         <autoresizingMask key="autoresizingMask"/>
@@ -229,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5U-ep-O2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611" y="475"/>
+            <point key="canvasLocation" x="1289" y="551"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ofn-1V-Sd5">
