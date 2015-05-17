@@ -11,7 +11,7 @@ import SwiftSpinner
 import Foundation
 import MobileCoreServices
 
-class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate {
     
     var images = [UIImage]()
     
@@ -351,6 +351,31 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
     
     func sendImageToInstagram (image: UIImage) {
         println("send image to insta")
+        
+        
+        
+        
+        
+        // Prep image for insta
+        let imageData = UIImageJPEGRepresentation(image, 0.9)
+        let tmpDirURL = NSURL.fileURLWithPath(NSTemporaryDirectory(), isDirectory: true)
+        let fileURL = tmpDirURL?.URLByAppendingPathComponent("blocstagram").URLByAppendingPathExtension("igo")
+        let success = imageData.writeToURL(fileURL!, atomically: true)
+        
+        if !success{
+            println("error")
+            return
+        }
+
+        
+        let documentController = UIDocumentInteractionController(URL: fileURL!)
+        documentController.UTI = "com.instagram.exclusivegram"
+        documentController.delegate = self
+        
+        
+        
+        
+        
     }
     
     
