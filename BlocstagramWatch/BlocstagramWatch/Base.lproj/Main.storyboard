@@ -157,7 +157,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj">
                             <connections>
-                                <action selector="testOpeningInsta:" destination="zZg-iu-vKq" id="DuY-Zm-Gk4"/>
+                                <action selector="cameraButtonPressed:" destination="zZg-iu-vKq" id="IXg-Wo-m2O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -165,6 +165,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="cameraButton" destination="bxd-yn-Sxj" id="oTl-4I-zXM"/>
                         <outlet property="logoutButton" destination="uF4-Al-y97" id="aJR-R4-XQs"/>
                     </connections>
                 </tableViewController>
@@ -229,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5U-ep-O2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611" y="475"/>
+            <point key="canvasLocation" x="1289" y="551"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ofn-1V-Sd5">

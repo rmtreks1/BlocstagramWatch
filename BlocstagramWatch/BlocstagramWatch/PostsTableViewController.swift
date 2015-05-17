@@ -9,34 +9,23 @@
 import UIKit
 import SwiftSpinner
 import Foundation
+import MobileCoreServices
 
-class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate {
+class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate {
     
     var images = [UIImage]()
     
     @IBOutlet var logoutButton: UIBarButtonItem!
+    @IBOutlet var cameraButton: UIBarButtonItem!
+    var documentController: UIDocumentInteractionController?
+    
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         println("***** viewWillAppear *****")
         checkAndSetLoginIfNeeded()
-//        
-//        
-//        
-//        if DataSource.sharedInstance.accessToken == nil {
-//            println("***** viewWillAppear no access token *****")
-//            checkAndSetLoginIfNeeded()
-//        }
-//        
-//        
-//        if DataSource.sharedInstance.accessToken != nil {
-//            println("******* viewWillAppear: retrieving data *******")
-//            DataSource.sharedInstance.retrieveDataFromInsta({
-//                self.tableView.reloadData()
-//            })
-//        }
-//
-
     }
     
     
@@ -73,28 +62,7 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // test shared dataSource
-//        var datasourceCount = DataSource.sharedInstance.mediaItems.count
-//        
-//        
-//        if DataSource.sharedInstance.accessToken == nil {
-//            println("***** viewDidLoad no access token *****")
-//            checkAndSetLoginIfNeeded()
-//        }
-//        
-//        
-//        if DataSource.sharedInstance.accessToken != nil {
-//            println("******* viewDidLoad: retrieving data *******")
-//            DataSource.sharedInstance.retrieveDataFromInsta()
-//        }
-        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:", name: "RefreshData", object: nil)
@@ -270,29 +238,7 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
     }
     
     
-    @IBAction func testOpeningInsta(sender: UIBarButtonItem) {
-        println("test opening insta")
-        
-        let testMediaID = DataSource.sharedInstance.parsedMediaItems[10].idNumber as! String
-        println(testMediaID)
-        println(DataSource.sharedInstance.accessToken)
-        
-        let instaURLString = "instagram://media?id=\(testMediaID)"
-        let instaURL = NSURL(string: instaURLString)
-        if UIApplication.sharedApplication().canOpenURL(instaURL!){
-            println("found insta")
-            UIApplication.sharedApplication().openURL(instaURL!)
-        } else {
-            println("no insta")
-        }
-        
-        
-//        NSURL *instagramURL = [NSURL URLWithString:@"instagram://location?id=1"];
-//        if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
-//            [[UIApplication sharedApplication] openURL:instagramURL];
-//        }
-        
-    }
+   
     
     
     
@@ -325,5 +271,128 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         println("refresh data")
         checkAndSetLoginIfNeeded()
     }
+    
+    
+    
+    @IBAction func cameraButtonPressed(sender: UIBarButtonItem) {
+        println("camera button pressed")
+        
+        // check if device supports camera
+        
+        let cameraAvailable = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        println(cameraAvailable)
+        
+        
+        
+        // action sheet
+        
+        let optionMenu = UIAlertController(title: nil, message: "Let's Post some Moments", preferredStyle: .ActionSheet)
+        let cameraAction = UIAlertAction(title: "Take a Picture", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("camera")
+            self.captureWithCamera()
+        })
+        let libraryAction = UIAlertAction(title: "Choose image from library", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("library")
+            self.presentLibrary()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("Cancelled")
+        })
+        
+        
+        if cameraAvailable{
+            optionMenu.addAction(cameraAction)
+        }
+        
+        optionMenu.addAction(libraryAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    
+    func presentLibrary(){
+        var imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+        imagePickerController.allowsEditing = false
+        self.presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
+    
+    
+    func captureWithCamera(){
+        var imgCap = UIImagePickerController()
+        imgCap.delegate = self
+        imgCap.sourceType = UIImagePickerControllerSourceType.Camera;
+        imgCap.mediaTypes = [kUTTypeImage]
+        imgCap.allowsEditing = false
+        
+        self.presentViewController(imgCap, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        if let imagePicked = image {
+            println("image captured")
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.sendImageToInstagram(image)
+    }
+    
+
+    func imagePickerControllerDidCancel(picker:UIImagePickerController)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
+    func sendImageToInstagram (image: UIImage) {
+        println("send image to insta")
+        
+        
+        
+        
+        
+        // Prep image for insta
+        let imageData = UIImageJPEGRepresentation(image, 0.9)
+        let tmpDirURL = NSURL.fileURLWithPath(NSTemporaryDirectory(), isDirectory: true)
+        let fileURL = tmpDirURL?.URLByAppendingPathComponent("blocstagram").URLByAppendingPathExtension("igo")
+        let success = imageData.writeToURL(fileURL!, atomically: true)
+        
+        if !success{
+            println("error")
+            return
+        }
+
+        
+        self.documentController = UIDocumentInteractionController(URL: fileURL!)
+        self.documentController!.UTI = "com.instagram.exclusivegram"
+        self.documentController!.delegate = self
+        
+        self.documentController!.presentOptionsMenuFromBarButtonItem(self.cameraButton, animated: true)
+        
+        
+        
+        
+    }
+    
+
+    
+    
+    
+    func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
     
 }
