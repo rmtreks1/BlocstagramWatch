@@ -55,7 +55,7 @@ class DataSource: NSObject {
                     var jsonObj = JSON(json!)
                     if let data = jsonObj["data"].arrayValue as [SwiftyJSON.JSON]?{
                         self.mediaItems = data
-                        //                    println(self.mediaItems)
+                        println(self.mediaItems)
                         println(self.mediaItems.count)
                         self.parseData(theRequestType.firstLoad)
                         println(self.parsedMediaItems.count) // checking items
@@ -144,7 +144,14 @@ class DataSource: NSObject {
     
     
     
-    
+    func userLikesMedia (mediaitem: Media){
+        
+        
+        let parameters = ["access_token": self.accessToken!]
+        
+        Alamofire.request(.POST, "https://api.instagram.com/v1/media/\(mediaitem.idNumber)/likes", parameters: parameters)
+        
+    }
     
     
     

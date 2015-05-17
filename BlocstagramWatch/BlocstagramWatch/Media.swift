@@ -21,6 +21,8 @@ class Media: NSObject {
     var caption: NSString?
 //    var comments: NSArray?
     var comments: Array <Comment> = []
+    var likeState: Bool?
+    var likesCount: Int?
     
     
     
@@ -54,34 +56,16 @@ class Media: NSObject {
         if commentCount >= 1{
             for index in 0...commentCount-1 {
                 let commentToAdd = Comment(commentDictionary: commentDictionary[index])
-//                self.comments += commentToAdd
                 self.comments.append(commentToAdd)
             }
                      println("count post comment parse is \(self.comments.count)")
         }
+     
+        self.likeState = mediaDictionary["user_has_liked"].bool
+        
+        self.likesCount = mediaDictionary["likes"]["count"].int
         
 
-        
-        
-        
-        
-        
-//        
-//        
-//        let json = JSONValue(jsonResult)
-//        let count: Int? = json["data"].array?.count
-//        println("found \(count!) challenges")
-//        
-//        if let ct = count {
-//            for index in 0...ct-1 {
-//                // println(json["data"][index]["challengeName"].string!)
-//                if let name = json["data"][index]["challengeName"].string {
-//                    println(name)
-//                }
-//                
-//            }
-//        
-        
     }
     
     

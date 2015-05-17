@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftSpinner
+import Foundation
 
-class PostsTableViewController: UITableViewController {
+class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellDelegate {
     
     var images = [UIImage]()
     
@@ -38,6 +39,11 @@ class PostsTableViewController: UITableViewController {
 
     }
     
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
     
     
     func checkAndSetLoginIfNeeded (){
@@ -91,6 +97,7 @@ class PostsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:", name: "RefreshData", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,6 +122,7 @@ class PostsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = self.tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! PostsHeaderTableViewCell
+        headerCell.delegate = self
         
         let mediaItem = DataSource.sharedInstance.parsedMediaItems[section]
         headerCell.setMedia(mediaItem)
@@ -262,5 +270,60 @@ class PostsTableViewController: UITableViewController {
     }
     
     
+    @IBAction func testOpeningInsta(sender: UIBarButtonItem) {
+        println("test opening insta")
+        
+        let testMediaID = DataSource.sharedInstance.parsedMediaItems[10].idNumber as! String
+        println(testMediaID)
+        println(DataSource.sharedInstance.accessToken)
+        
+        let instaURLString = "instagram://media?id=\(testMediaID)"
+        let instaURL = NSURL(string: instaURLString)
+        if UIApplication.sharedApplication().canOpenURL(instaURL!){
+            println("found insta")
+            UIApplication.sharedApplication().openURL(instaURL!)
+        } else {
+            println("no insta")
+        }
+        
+        
+//        NSURL *instagramURL = [NSURL URLWithString:@"instagram://location?id=1"];
+//        if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+//            [[UIApplication sharedApplication] openURL:instagramURL];
+//        }
+        
+    }
+    
+    
+    
+    func likeButtonPressed(headerCell: PostsHeaderTableViewCell) {
+        if let MediaID = headerCell.mediaItem?.idNumber {
+            println(MediaID)
+
+            // opening Insta
+            let instaURLString = "instagram://media?id=\(MediaID)"
+            let instaURL = NSURL(string: instaURLString)
+            if UIApplication.sharedApplication().canOpenURL(instaURL!){
+                println("found insta")
+                UIApplication.sharedApplication().openURL(instaURL!)
+            } else {
+                println("no insta")
+                
+                
+                let alertView = UIAlertController(title: "Oops Can't Support Liking", message: "You must have instagram installed to like a photo", preferredStyle: .Alert)
+                alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                presentViewController(alertView, animated: true, completion: nil)
+                
+            }
+
+        }
+    }
+    
+    
+    
+    func refreshData(notification: NSNotification){
+        println("refresh data")
+        checkAndSetLoginIfNeeded()
+    }
     
 }

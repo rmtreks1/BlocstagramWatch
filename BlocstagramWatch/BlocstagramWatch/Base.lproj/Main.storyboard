@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="49" id="tCR-Yi-XEc" customClass="PostsHeaderTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="49" id="tCR-Yi-XEc" customClass="PostsHeaderTableViewCell" customModule="BlocstagramWatch" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCR-Yi-XEc" id="cQt-Dk-fZY">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -29,10 +29,36 @@
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRF-tO-7Ug" userLabel="LikesButtonAndCounter">
                                             <rect key="frame" x="212" y="8" width="100" height="30"/>
-                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDF-fO-JRx">
+                                                    <rect key="frame" x="8" y="0.0" width="65" height="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUS-Jx-f6z">
+                                                    <rect key="frame" x="78" y="4" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="N4W-FS-PRV"/>
+                                                        <constraint firstAttribute="width" constant="22" id="u2J-DV-mCZ"/>
+                                                    </constraints>
+                                                    <state key="normal" image="heart-empty">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="likeButtonPressed:" destination="tCR-Yi-XEc" eventType="touchUpInside" id="7ou-gL-QIj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                             <constraints>
+                                                <constraint firstItem="yDF-fO-JRx" firstAttribute="top" secondItem="FRF-tO-7Ug" secondAttribute="top" id="7Eg-Ed-j2I"/>
+                                                <constraint firstItem="yDF-fO-JRx" firstAttribute="leading" secondItem="FRF-tO-7Ug" secondAttribute="leadingMargin" id="9ZP-ws-CbG"/>
+                                                <constraint firstItem="EUS-Jx-f6z" firstAttribute="leading" secondItem="yDF-fO-JRx" secondAttribute="trailing" constant="5" id="AVG-fK-urH"/>
                                                 <constraint firstAttribute="width" constant="100" id="LD8-tU-gGm"/>
                                                 <constraint firstAttribute="height" constant="30" id="XiT-4I-Acg"/>
+                                                <constraint firstAttribute="centerY" secondItem="EUS-Jx-f6z" secondAttribute="centerY" id="gBn-Bc-DPc"/>
+                                                <constraint firstAttribute="trailing" secondItem="EUS-Jx-f6z" secondAttribute="trailing" id="jeM-HS-Lz3"/>
+                                                <constraint firstAttribute="bottom" secondItem="yDF-fO-JRx" secondAttribute="bottom" id="krC-QJ-QaE"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UsernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-lz-PZD" userLabel="Username">
@@ -54,7 +80,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="likeButton" destination="EUS-Jx-f6z" id="9l0-Gd-85o"/>
                                     <outlet property="likesButtonCounter" destination="FRF-tO-7Ug" id="rkf-EG-VlX"/>
+                                    <outlet property="likesCount" destination="yDF-fO-JRx" id="sWt-vi-zMV"/>
                                     <outlet property="profileImage" destination="T2C-rO-Had" id="BM3-Ln-fei"/>
                                     <outlet property="usernameLabel" destination="6Eq-lz-PZD" id="fi6-Xh-6hK"/>
                                 </connections>
@@ -129,7 +157,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bxd-yn-Sxj">
                             <connections>
-                                <segue destination="oBe-cC-wOc" kind="modal" id="HAb-VC-bZ6"/>
+                                <action selector="testOpeningInsta:" destination="zZg-iu-vKq" id="DuY-Zm-Gk4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -223,7 +251,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TestImage.JPG" width="3071" height="1919"/>
+        <image name="TestImage.JPG" width="640" height="640"/>
+        <image name="heart-empty" width="28" height="27"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
