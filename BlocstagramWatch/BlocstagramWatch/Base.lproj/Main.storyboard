@@ -165,6 +165,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="cameraButton" destination="bxd-yn-Sxj" id="oTl-4I-zXM"/>
                         <outlet property="logoutButton" destination="uF4-Al-y97" id="aJR-R4-XQs"/>
                     </connections>
                 </tableViewController>

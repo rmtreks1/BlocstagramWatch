@@ -16,6 +16,11 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
     var images = [UIImage]()
     
     @IBOutlet var logoutButton: UIBarButtonItem!
+    @IBOutlet var cameraButton: UIBarButtonItem!
+    var documentController: UIDocumentInteractionController?
+    
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -337,8 +342,8 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         if let imagePicked = image {
             println("image captured")
         }
-        self.sendImageToInstagram(image)
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.sendImageToInstagram(image)
     }
     
 
@@ -368,15 +373,25 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         }
 
         
-        let documentController = UIDocumentInteractionController(URL: fileURL!)
-        documentController.UTI = "com.instagram.exclusivegram"
-        documentController.delegate = self
+        self.documentController = UIDocumentInteractionController(URL: fileURL!)
+        self.documentController!.UTI = "com.instagram.exclusivegram"
+        self.documentController!.delegate = self
         
+        self.documentController!.presentOptionsMenuFromBarButtonItem(self.cameraButton, animated: true)
         
         
         
         
     }
+    
+
+    
+    
+    
+    func documentInteractionController(controller: UIDocumentInteractionController, didEndSendingToApplication application: String) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     
     
