@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        retrieveSavedSettings()
 
         // Do any additional setup after loading the view.
         if !notificationsSwitch.on {
@@ -109,8 +110,26 @@ class SettingsViewController: UIViewController {
     @IBAction func scheduleNotifications(sender: UIButton) {
         DataSource.sharedInstance.timeBetweenPosts = Int(self.timeBetweenPostsSlider.value)
         DataSource.sharedInstance.postsPerDay = Int(self.postsPerDaySlider.value)
+        DataSource.sharedInstance.remindToPost = self.notificationsSwitch.on
         DataSource.sharedInstance.scheduleNotifications()
+        DataSource.sharedInstance.savePostingPreferences()
     }
     
+    
+    // MARK: - Saved Settings
+    func retrieveSavedSettings(){
+        let settings = NSUserDefaults.standardUserDefaults()
+        let settingsPosts = settings.integerForKey("postsPerDay")
+        self.postsPerDaySlider.value = Float(settingsPosts)
+        self.postPerDayLabel.text = String(settingsPosts)
+        
+        self.notificationsSwitch.on = settings.boolForKey("remindToPost")
+        
+        
+        let postInterval = settings.integerForKey("timeBetweenPosts")
+        self.timeBetweenPostsSlider.value = Float(postInterval)
+        self.timeBetweenPostsLabel.text = String(postInterval)
+        
+    }
 
 }

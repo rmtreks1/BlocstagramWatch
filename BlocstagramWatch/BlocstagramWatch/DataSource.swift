@@ -29,6 +29,7 @@ class DataSource: NSObject {
     // variables related to posts
     var postsPerDay: Int?
     var timeBetweenPosts: Int?
+    var remindToPost: Bool = false
     
     
     
@@ -178,6 +179,18 @@ class DataSource: NSObject {
         println(UIApplication.sharedApplication().scheduledLocalNotifications)
         
     }
+    
+    
+    
+    
+    func savePostingPreferences(){
+        let settings = NSUserDefaults.standardUserDefaults()
+        settings.setInteger(postsPerDay!, forKey: "postsPerDay")
+        settings.setInteger(timeBetweenPosts!, forKey: "timeBetweenPosts")
+        settings.setBool(remindToPost, forKey: "remindToPost")
+    }
+    
+    
     
     
     
