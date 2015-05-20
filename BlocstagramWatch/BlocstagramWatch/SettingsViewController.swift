@@ -62,11 +62,16 @@ class SettingsViewController: UIViewController {
     @IBAction func notificationOptionChanged(sender: UISwitch) {
         if sender.on {
             println("switch is on")
+            self.registerForNotifications()
         } else {
             println("swithc is off")
         }
     }
 
     
+    
+    func registerForNotifications(){
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))  // types are UIUserNotificationType members
+    }
 
 }
