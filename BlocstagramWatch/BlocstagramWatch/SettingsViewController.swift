@@ -42,6 +42,7 @@ class SettingsViewController: UIViewController {
         DataSource.sharedInstance.parsedMediaItems = []
         DataSource.sharedInstance.mediaItems = []
         clearInstagramCookies()
+        self.navigationController!.popViewControllerAnimated(true)
     }
     
     func clearInstagramCookies () {

@@ -178,7 +178,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="EGY-l9-DTK">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="uF4-Al-y97">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="uF4-Al-y97">
                             <connections>
                                 <segue destination="2W4-lx-igA" kind="push" id="ebT-vT-mnL"/>
                             </connections>
