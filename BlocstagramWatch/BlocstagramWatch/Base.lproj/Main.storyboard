@@ -75,12 +75,27 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyi-QT-WHc">
+                                        <rect key="frame" x="78" y="358" width="132" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Q6T-Pg-oAJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Set Notification">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="scheduleNotifications:" destination="2W4-lx-igA" eventType="touchUpInside" id="dKH-s1-gHq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gef-hA-e4L" secondAttribute="trailing" constant="40" id="60H-Nu-vFh"/>
+                                    <constraint firstItem="cyi-QT-WHc" firstAttribute="leading" secondItem="I0o-sy-P0q" secondAttribute="leading" constant="78" id="DI8-sf-NlI"/>
                                     <constraint firstItem="gef-hA-e4L" firstAttribute="top" secondItem="YbH-jd-9tO" secondAttribute="bottom" constant="50" id="H1L-ae-Yes"/>
                                     <constraint firstItem="zUr-75-c0G" firstAttribute="top" secondItem="I0o-sy-P0q" secondAttribute="top" constant="15" id="IqS-Yj-5dG"/>
+                                    <constraint firstAttribute="trailing" secondItem="cyi-QT-WHc" secondAttribute="trailing" constant="78" id="LlI-pW-n3F"/>
+                                    <constraint firstAttribute="bottom" secondItem="cyi-QT-WHc" secondAttribute="bottom" constant="8" id="Pxf-FE-bqd"/>
                                     <constraint firstItem="zUr-75-c0G" firstAttribute="trailing" secondItem="QzZ-5a-5c9" secondAttribute="trailing" id="RlY-kA-zIm"/>
                                     <constraint firstItem="YbH-jd-9tO" firstAttribute="leading" secondItem="zUr-75-c0G" secondAttribute="leading" id="SZY-ij-5YM"/>
                                     <constraint firstItem="ZEW-u8-Mbj" firstAttribute="top" secondItem="gef-hA-e4L" secondAttribute="bottom" constant="13" id="V8E-3R-Lwb"/>
@@ -118,8 +133,10 @@
                         <outlet property="loginLogout" destination="rIQ-RP-PNU" id="Oxo-fM-Ocp"/>
                         <outlet property="notificationsSwitch" destination="cSQ-v5-PV0" id="6Ki-aM-yiF"/>
                         <outlet property="postPerDayLabel" destination="QzZ-5a-5c9" id="0kr-dx-NxY"/>
+                        <outlet property="postsPerDaySlider" destination="zUr-75-c0G" id="1IO-H5-g2S"/>
                         <outlet property="postsSchedulingView" destination="I0o-sy-P0q" id="JD3-e3-vad"/>
                         <outlet property="timeBetweenPostsLabel" destination="ZEW-u8-Mbj" id="yoh-lH-11w"/>
+                        <outlet property="timeBetweenPostsSlider" destination="gef-hA-e4L" id="fFx-yV-okr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtg-ry-yAN" userLabel="First Responder" sceneMemberID="firstResponder"/>

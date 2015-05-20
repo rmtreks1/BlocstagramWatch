@@ -15,6 +15,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet var postPerDayLabel: UILabel!
     @IBOutlet var timeBetweenPostsLabel: UILabel!
     @IBOutlet var postsSchedulingView: UIView!
+    @IBOutlet var postsPerDaySlider: UISlider!
+    @IBOutlet var timeBetweenPostsSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,5 +103,14 @@ class SettingsViewController: UIViewController {
         self.timeBetweenPostsLabel.text = String(timeBetweenPosts)
         DataSource.sharedInstance.timeBetweenPosts = timeBetweenPosts
     }
+    
+    
+    
+    @IBAction func scheduleNotifications(sender: UIButton) {
+        DataSource.sharedInstance.timeBetweenPosts = Int(self.timeBetweenPostsSlider.value)
+        DataSource.sharedInstance.postsPerDay = Int(self.postsPerDaySlider.value)
+        DataSource.sharedInstance.scheduleNotifications()
+    }
+    
 
 }

@@ -161,6 +161,23 @@ class DataSource: NSObject {
     
     
     
+    // MARK: - Notifications
+    
+    func scheduleNotifications(){
+        println("*** scheduling notifications ***")
+        
+        for i in 1...self.postsPerDay!{
+            println("creating notification")
+            let localNotification:UILocalNotification = UILocalNotification()
+            localNotification.alertAction = "Post to Instagram"
+            localNotification.alertBody = "Reach your publishing goal. Post to Instagram now."
+            localNotification.repeatInterval = NSCalendarUnit.CalendarUnitDay
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: Double(self.timeBetweenPosts!*i*60))
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+        println(UIApplication.sharedApplication().scheduledLocalNotifications)
+        
+    }
     
     
     
