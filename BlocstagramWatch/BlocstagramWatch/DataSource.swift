@@ -26,6 +26,10 @@ class DataSource: NSObject {
     var isRefreshing: Bool = false
     var pullToRefresh: Bool = false
     
+    // variables related to posts
+    var postsPerDay: Int?
+    var timeBetweenPosts: Int?
+    
     
     
     
@@ -34,6 +38,7 @@ class DataSource: NSObject {
         case pullToRefresh
         case infiniteScroll
     }
+    
 
     
     

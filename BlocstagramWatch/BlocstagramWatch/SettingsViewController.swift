@@ -92,12 +92,14 @@ class SettingsViewController: UIViewController {
     @IBAction func postsPerDayChanged(sender: UISlider) {
         let posts = Int(sender.value)
         self.postPerDayLabel.text = String(posts)
+        DataSource.sharedInstance.postsPerDay = posts
     }
     
     
     @IBAction func timeBetweenPostsChanged(sender: UISlider) {
         let timeBetweenPosts = Int(sender.value)
         self.timeBetweenPostsLabel.text = String(timeBetweenPosts)
+        DataSource.sharedInstance.timeBetweenPosts = timeBetweenPosts
     }
 
 }
