@@ -214,15 +214,15 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         
     }
     
-    @IBAction func logout(sender: UIBarButtonItem) {
-        println("logout pressed")
-        DataSource.sharedInstance.accessToken = nil
-        DataSource.sharedInstance.parsedMediaItems = []
-        DataSource.sharedInstance.mediaItems = []
-        self.tableView.reloadData()
-        clearInstagramCookies()
-        checkAndSetLoginIfNeeded()
-    }
+//    @IBAction func logout(sender: UIBarButtonItem) {
+//        println("logout pressed")
+//        DataSource.sharedInstance.accessToken = nil
+//        DataSource.sharedInstance.parsedMediaItems = []
+//        DataSource.sharedInstance.mediaItems = []
+//        self.tableView.reloadData()
+//        clearInstagramCookies()
+//        checkAndSetLoginIfNeeded()
+//    }
     
     
     func clearInstagramCookies () {
