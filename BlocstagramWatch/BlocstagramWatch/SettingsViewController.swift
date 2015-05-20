@@ -12,11 +12,20 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet var loginLogout: UIBarButtonItem!
     @IBOutlet var notificationsSwitch: UISwitch!
+    @IBOutlet var postPerDayLabel: UILabel!
+    @IBOutlet var timeBetweenPostsLabel: UILabel!
+    @IBOutlet var postsSchedulingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if !notificationsSwitch.on {
+            println("switch is off")
+           self.postsSchedulingView.hidden = true
+        } else {
+            self.postsSchedulingView.hidden = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,12 +68,16 @@ class SettingsViewController: UIViewController {
     }
     
     
+    
+    // MARK: - Notifications
     @IBAction func notificationOptionChanged(sender: UISwitch) {
         if sender.on {
             println("switch is on")
             self.registerForNotifications()
+            self.postsSchedulingView.hidden = false
         } else {
             println("swithc is off")
+            self.postsSchedulingView.hidden = true
         }
     }
 
@@ -72,6 +85,19 @@ class SettingsViewController: UIViewController {
     
     func registerForNotifications(){
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))  // types are UIUserNotificationType members
+    }
+    
+    
+    
+    @IBAction func postsPerDayChanged(sender: UISlider) {
+        let posts = Int(sender.value)
+        self.postPerDayLabel.text = String(posts)
+    }
+    
+    
+    @IBAction func timeBetweenPostsChanged(sender: UISlider) {
+        let timeBetweenPosts = Int(sender.value)
+        self.timeBetweenPostsLabel.text = String(timeBetweenPosts)
     }
 
 }

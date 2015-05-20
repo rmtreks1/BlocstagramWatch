@@ -30,13 +30,81 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0o-sy-P0q" userLabel="PostsScheduling View">
+                                <rect key="frame" x="16" y="172" width="288" height="396"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="zUr-75-c0G" userLabel="PostsPerDay Slider">
+                                        <rect key="frame" x="38" y="15" width="212" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="oSj-4T-fvL"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="postsPerDayChanged:" destination="2W4-lx-igA" eventType="valueChanged" id="qbm-9V-qzv"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posts per day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbH-jd-9tO">
+                                        <rect key="frame" x="40" y="64" width="107" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzZ-5a-5c9">
+                                        <rect key="frame" x="238" y="64" width="10" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="5" maxValue="120" translatesAutoresizingMaskIntoConstraints="NO" id="gef-hA-e4L" userLabel="TimeBetweenPosts Slider">
+                                        <rect key="frame" x="38" y="135" width="212" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="rq1-TU-Ujv"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="timeBetweenPostsChanged:" destination="2W4-lx-igA" eventType="valueChanged" id="24k-jI-iVE"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mins. b/w posts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHW-dP-3Qe">
+                                        <rect key="frame" x="40" y="178" width="123" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEW-u8-Mbj">
+                                        <rect key="frame" x="238" y="178" width="10" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gef-hA-e4L" secondAttribute="trailing" constant="40" id="60H-Nu-vFh"/>
+                                    <constraint firstItem="gef-hA-e4L" firstAttribute="top" secondItem="YbH-jd-9tO" secondAttribute="bottom" constant="50" id="H1L-ae-Yes"/>
+                                    <constraint firstItem="zUr-75-c0G" firstAttribute="top" secondItem="I0o-sy-P0q" secondAttribute="top" constant="15" id="IqS-Yj-5dG"/>
+                                    <constraint firstItem="zUr-75-c0G" firstAttribute="trailing" secondItem="QzZ-5a-5c9" secondAttribute="trailing" id="RlY-kA-zIm"/>
+                                    <constraint firstItem="YbH-jd-9tO" firstAttribute="leading" secondItem="zUr-75-c0G" secondAttribute="leading" id="SZY-ij-5YM"/>
+                                    <constraint firstItem="ZEW-u8-Mbj" firstAttribute="top" secondItem="gef-hA-e4L" secondAttribute="bottom" constant="13" id="V8E-3R-Lwb"/>
+                                    <constraint firstItem="gef-hA-e4L" firstAttribute="leading" secondItem="I0o-sy-P0q" secondAttribute="leading" constant="40" id="VAO-uh-F3C"/>
+                                    <constraint firstItem="zUr-75-c0G" firstAttribute="leading" secondItem="I0o-sy-P0q" secondAttribute="leading" constant="40" id="e0u-Xm-BTh"/>
+                                    <constraint firstItem="cHW-dP-3Qe" firstAttribute="top" secondItem="gef-hA-e4L" secondAttribute="bottom" constant="13" id="emR-VY-iqw"/>
+                                    <constraint firstItem="ZEW-u8-Mbj" firstAttribute="trailing" secondItem="gef-hA-e4L" secondAttribute="trailing" id="iLU-5Q-XlC"/>
+                                    <constraint firstItem="QzZ-5a-5c9" firstAttribute="top" secondItem="zUr-75-c0G" secondAttribute="bottom" constant="19" id="iW2-eI-A5y"/>
+                                    <constraint firstAttribute="trailing" secondItem="zUr-75-c0G" secondAttribute="trailing" constant="40" id="la4-kg-duA"/>
+                                    <constraint firstItem="gef-hA-e4L" firstAttribute="leading" secondItem="cHW-dP-3Qe" secondAttribute="leading" id="vKd-el-39U"/>
+                                    <constraint firstItem="YbH-jd-9tO" firstAttribute="top" secondItem="zUr-75-c0G" secondAttribute="bottom" constant="19" id="xaZ-Mo-eBl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="I0o-sy-P0q" firstAttribute="top" secondItem="Lie-e4-c1s" secondAttribute="bottom" constant="42" id="3hL-hK-tCZ"/>
                             <constraint firstItem="Lie-e4-c1s" firstAttribute="top" secondItem="Blk-ut-iXG" secondAttribute="bottom" constant="45" id="7Xt-e1-rnU"/>
+                            <constraint firstItem="I0o-sy-P0q" firstAttribute="leading" secondItem="Slg-gS-Waz" secondAttribute="leadingMargin" id="Rnj-tk-Leh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I0o-sy-P0q" secondAttribute="trailing" id="a3E-Tu-xEq"/>
                             <constraint firstAttribute="trailing" secondItem="cSQ-v5-PV0" secondAttribute="trailing" constant="16" id="hTy-u3-XxH"/>
                             <constraint firstItem="Lie-e4-c1s" firstAttribute="leading" secondItem="Slg-gS-Waz" secondAttribute="leading" constant="16" id="lih-Va-dpc"/>
                             <constraint firstItem="cSQ-v5-PV0" firstAttribute="top" secondItem="Blk-ut-iXG" secondAttribute="bottom" constant="40" id="rDA-Uu-GIl"/>
+                            <constraint firstItem="5bD-2x-Qsx" firstAttribute="top" secondItem="I0o-sy-P0q" secondAttribute="bottom" id="sUm-4e-5MP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jdp-vl-p1r">
@@ -49,6 +117,9 @@
                     <connections>
                         <outlet property="loginLogout" destination="rIQ-RP-PNU" id="Oxo-fM-Ocp"/>
                         <outlet property="notificationsSwitch" destination="cSQ-v5-PV0" id="6Ki-aM-yiF"/>
+                        <outlet property="postPerDayLabel" destination="QzZ-5a-5c9" id="0kr-dx-NxY"/>
+                        <outlet property="postsSchedulingView" destination="I0o-sy-P0q" id="JD3-e3-vad"/>
+                        <outlet property="timeBetweenPostsLabel" destination="ZEW-u8-Mbj" id="yoh-lH-11w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtg-ry-yAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
