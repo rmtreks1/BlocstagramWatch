@@ -17,7 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="Slg-gS-Waz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cSQ-v5-PV0">
+                                <rect key="frame" x="255" y="104" width="51" height="31"/>
+                                <connections>
+                                    <action selector="notificationOptionChanged:" destination="2W4-lx-igA" eventType="valueChanged" id="R17-5D-RlA"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be reminded to post" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-e4-c1s">
+                                <rect key="frame" x="16" y="109" width="157" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lie-e4-c1s" firstAttribute="top" secondItem="Blk-ut-iXG" secondAttribute="bottom" constant="45" id="7Xt-e1-rnU"/>
+                            <constraint firstAttribute="trailing" secondItem="cSQ-v5-PV0" secondAttribute="trailing" constant="16" id="hTy-u3-XxH"/>
+                            <constraint firstItem="Lie-e4-c1s" firstAttribute="leading" secondItem="Slg-gS-Waz" secondAttribute="leading" constant="16" id="lih-Va-dpc"/>
+                            <constraint firstItem="cSQ-v5-PV0" firstAttribute="top" secondItem="Blk-ut-iXG" secondAttribute="bottom" constant="40" id="rDA-Uu-GIl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jdp-vl-p1r">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="rIQ-RP-PNU">
@@ -28,6 +48,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="loginLogout" destination="rIQ-RP-PNU" id="Oxo-fM-Ocp"/>
+                        <outlet property="notificationsSwitch" destination="cSQ-v5-PV0" id="6Ki-aM-yiF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtg-ry-yAN" userLabel="First Responder" sceneMemberID="firstResponder"/>

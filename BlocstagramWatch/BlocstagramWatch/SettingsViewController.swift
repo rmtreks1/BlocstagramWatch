@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet var loginLogout: UIBarButtonItem!
+    @IBOutlet var notificationsSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,5 +57,16 @@ class SettingsViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func notificationOptionChanged(sender: UISwitch) {
+        if sender.on {
+            println("switch is on")
+        } else {
+            println("swithc is off")
+        }
+    }
+
+    
 
 }
