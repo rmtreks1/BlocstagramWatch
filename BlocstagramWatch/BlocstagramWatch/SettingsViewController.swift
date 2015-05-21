@@ -116,6 +116,16 @@ class SettingsViewController: UIViewController {
     }
     
     
+    
+    @IBAction func findNotificationsForRestOfToday(sender: UIButton) {
+        DataSource.sharedInstance.lookForNotificationsTodayButAfterNow()
+    }
+    
+    
+    
+    
+    
+    
     // MARK: - Saved Settings
     func retrieveSavedSettings(){
         let settings = NSUserDefaults.standardUserDefaults()

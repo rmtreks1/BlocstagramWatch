@@ -87,10 +87,20 @@
                                             <action selector="scheduleNotifications:" destination="2W4-lx-igA" eventType="touchUpInside" id="dKH-s1-gHq"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYb-tZ-nXG">
+                                        <rect key="frame" x="121" y="292" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="findNotificationsForRestOfToday:" destination="2W4-lx-igA" eventType="touchUpInside" id="NgO-fR-xNU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gef-hA-e4L" secondAttribute="trailing" constant="40" id="60H-Nu-vFh"/>
+                                    <constraint firstItem="yYb-tZ-nXG" firstAttribute="leading" secondItem="I0o-sy-P0q" secondAttribute="leading" constant="121" id="94N-j2-rhp"/>
                                     <constraint firstItem="cyi-QT-WHc" firstAttribute="leading" secondItem="I0o-sy-P0q" secondAttribute="leading" constant="78" id="DI8-sf-NlI"/>
                                     <constraint firstItem="gef-hA-e4L" firstAttribute="top" secondItem="YbH-jd-9tO" secondAttribute="bottom" constant="50" id="H1L-ae-Yes"/>
                                     <constraint firstItem="zUr-75-c0G" firstAttribute="top" secondItem="I0o-sy-P0q" secondAttribute="top" constant="15" id="IqS-Yj-5dG"/>
@@ -100,10 +110,12 @@
                                     <constraint firstItem="YbH-jd-9tO" firstAttribute="leading" secondItem="zUr-75-c0G" secondAttribute="leading" id="SZY-ij-5YM"/>
                                     <constraint firstItem="ZEW-u8-Mbj" firstAttribute="top" secondItem="gef-hA-e4L" secondAttribute="bottom" constant="13" id="V8E-3R-Lwb"/>
                                     <constraint firstItem="gef-hA-e4L" firstAttribute="leading" secondItem="I0o-sy-P0q" secondAttribute="leading" constant="40" id="VAO-uh-F3C"/>
+                                    <constraint firstItem="cyi-QT-WHc" firstAttribute="top" secondItem="yYb-tZ-nXG" secondAttribute="bottom" constant="36" id="XDF-DF-xlH"/>
                                     <constraint firstItem="zUr-75-c0G" firstAttribute="leading" secondItem="I0o-sy-P0q" secondAttribute="leading" constant="40" id="e0u-Xm-BTh"/>
                                     <constraint firstItem="cHW-dP-3Qe" firstAttribute="top" secondItem="gef-hA-e4L" secondAttribute="bottom" constant="13" id="emR-VY-iqw"/>
                                     <constraint firstItem="ZEW-u8-Mbj" firstAttribute="trailing" secondItem="gef-hA-e4L" secondAttribute="trailing" id="iLU-5Q-XlC"/>
                                     <constraint firstItem="QzZ-5a-5c9" firstAttribute="top" secondItem="zUr-75-c0G" secondAttribute="bottom" constant="19" id="iW2-eI-A5y"/>
+                                    <constraint firstAttribute="trailing" secondItem="yYb-tZ-nXG" secondAttribute="trailing" constant="121" id="jYE-6i-PlO"/>
                                     <constraint firstAttribute="trailing" secondItem="zUr-75-c0G" secondAttribute="trailing" constant="40" id="la4-kg-duA"/>
                                     <constraint firstItem="gef-hA-e4L" firstAttribute="leading" secondItem="cHW-dP-3Qe" secondAttribute="leading" id="vKd-el-39U"/>
                                     <constraint firstItem="YbH-jd-9tO" firstAttribute="top" secondItem="zUr-75-c0G" secondAttribute="bottom" constant="19" id="xaZ-Mo-eBl"/>

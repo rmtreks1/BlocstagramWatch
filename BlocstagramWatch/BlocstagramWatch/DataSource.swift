@@ -193,5 +193,23 @@ class DataSource: NSObject {
     
     
     
+    func lookForNotificationsTodayButAfterNow(){
+        let localnotifications = UIApplication.sharedApplication().scheduledLocalNotifications
+        println(localnotifications)
+        
+        for i in localnotifications {
+            let fireDate = i.fireDate!
+            let dateComparison = NSDate().compare(fireDate)
+            let isToday: Bool = NSCalendar.currentCalendar().isDateInToday(fireDate)
+            if isToday {
+                println(isToday)
+                if dateComparison == NSComparisonResult.OrderedAscending {
+                    println(i)
+                }
+            }
+        }
+    }
+    
+    
     
 }

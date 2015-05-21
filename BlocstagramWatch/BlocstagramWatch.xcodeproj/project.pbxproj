@@ -100,7 +100,7 @@
 		01CEBFDD1B0D4194007B5458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		01CEBFDF1B0D4194007B5458 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		01D30AD11B05E40E00B34936 /* TestImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.JPG; sourceTree = "<group>"; };
-		01EFBF311B0CB0C2008AA7AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = BlocstagramWatch/SettingsViewController.swift; sourceTree = "<group>"; };
+		01EFBF311B0CB0C2008AA7AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		01F8783C1B032471004DC14A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		01F8783E1B0324F3004DC14A /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		01F878401B032585004DC14A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 		01AB22E11B02D33000707D5D = {
 			isa = PBXGroup;
 			children = (
-				01EFBF311B0CB0C2008AA7AC /* SettingsViewController.swift */,
 				01AB22EC1B02D33000707D5D /* BlocstagramWatch */,
 				01AB23021B02D33000707D5D /* BlocstagramWatchTests */,
 				01CEBFC71B0D4194007B5458 /* BlocstagramWatch WatchKit Extension */,
@@ -184,6 +183,7 @@
 				01F878421B0325E5004DC14A /* DataSource.swift */,
 				014766851B03366E00248B0D /* OldLoginViewController.swift */,
 				013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */,
+				01EFBF311B0CB0C2008AA7AC /* SettingsViewController.swift */,
 			);
 			path = BlocstagramWatch;
 			sourceTree = "<group>";
@@ -800,6 +800,7 @@
 				01CEBFE71B0D4194007B5458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01CEBFE91B0D4194007B5458 /* Build configuration list for PBXNativeTarget "BlocstagramWatch WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -808,6 +809,7 @@
 				01CEBFE51B0D4194007B5458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
