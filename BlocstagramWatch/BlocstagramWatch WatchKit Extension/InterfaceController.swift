@@ -28,4 +28,11 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    
+    override func handleActionWithIdentifier(identifier: String?, forLocalNotification localNotification: UILocalNotification) {
+        if let notificationIdentifier = identifier {
+            println(notificationIdentifier)
+        }
+    }
+    
 }
