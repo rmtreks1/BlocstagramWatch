@@ -60,20 +60,6 @@ class DataSource: NSObject {
         self.postsToday = settings.integerForKey("postsToday")
         self.lastPostDate = settings.valueForKey("lastPostDate") as? NSDate
         
-        
-//        if let tempPostsPerDay = settings.integerForKey("postsPerDay"){
-//            self.postsPerDay = tempPostsPerDay
-//        }
-//        
-//        if let tempRemindToPost = settings.boolForKey("remindToPost"){
-//            self.remindToPost = tempRemindToPost
-//        }
-//
-//        if let tempTimeBetweenPosts = settings.integerForKey("timeBetweenPosts"){
-//            self.timeBetweenPosts = tempTimeBetweenPosts
-//        }
-        
-        
     }
     
     
@@ -237,11 +223,12 @@ class DataSource: NSObject {
     
     
     
-    func lookForNotificationsTodayButAfterNow() -> [UILocalNotification]{
+    func lookForNotificationsTodayButAfterNow() -> (todaysNotifications:[UILocalNotification], otherNotifications:[UILocalNotification]){
         let localnotifications = UIApplication.sharedApplication().scheduledLocalNotifications
         println(localnotifications)
         
         var todaysNotifications: [UILocalNotification] = []
+        var otherNotifications: [UILocalNotification] = []
         
         for i in localnotifications {
             let fireDate = i.fireDate!
@@ -253,10 +240,14 @@ class DataSource: NSObject {
                 if dateComparison == NSComparisonResult.OrderedAscending {
                     println(i)
                     todaysNotifications.append(i as! UILocalNotification)
+                } else {
+                    otherNotifications.append(i as! UILocalNotification)
                 }
+            } else {
+                otherNotifications.append(i as! UILocalNotification)
             }
         }
-        return todaysNotifications
+        return (todaysNotifications, otherNotifications)
     }
     
     
@@ -293,15 +284,38 @@ class DataSource: NSObject {
     
     
     func adjustNotifications(){
-        let notificationsLeftForToday = lookForNotificationsTodayButAfterNow().count
+        var notificationsLeftForToday = lookForNotificationsTodayButAfterNow().todaysNotifications
         
         // posts left to do for the day should match notifications left for today
         //
         let postsLeftForToday = max(0,postsPerDay! - postsToday!)
-        let notificationsToReschedule = max(0, postsLeftForToday - notificationsLeftForToday)
+        let notificationsToReschedule = max(0, notificationsLeftForToday.count - postsLeftForToday)
         
-        println("Taken \(self.postsToday) of \(self.postsPerDay) with \(notificationsLeftForToday) notifications left out of a total of \(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
-//        println(notificationsToReschedule)
+        println("Taken \(self.postsToday) of \(self.postsPerDay) with \(notificationsLeftForToday.count) notifications left out of a total of \(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
+        if notificationsToReschedule > 0 {
+            for i in 0...notificationsToReschedule-1 {
+                let tempNotification = notificationsLeftForToday[i]
+                let currentFireDate = tempNotification.fireDate
+
+                
+                let newFireDate = NSCalendar.currentCalendar().dateByAddingUnit(
+                    .CalendarUnitDay,
+                    value: 1,
+                    toDate: currentFireDate!,
+                    options: nil)!
+                
+                tempNotification.fireDate = newFireDate
+                notificationsLeftForToday[i] = tempNotification
+                
+            }
+            
+            let newScheduledNotifications = notificationsLeftForToday + lookForNotificationsTodayButAfterNow().otherNotifications
+            
+            UIApplication.sharedApplication().scheduledLocalNotifications = newScheduledNotifications
+        }
+        
+        
+        
     }
     
     
