@@ -310,6 +310,10 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
         optionMenu.addAction(libraryAction)
         optionMenu.addAction(cancelAction)
         
+        // increment post count to offset notifications
+        DataSource.sharedInstance.postAPic()
+        
+        
         self.presentViewController(optionMenu, animated: true, completion: nil)
     }
     
@@ -357,6 +361,8 @@ class PostsTableViewController: UITableViewController, PostsHeaderTableViewCellD
     func sendImageToInstagram (image: UIImage) {
         println("send image to insta")
         
+//        // increment post count to offset notifications
+//        DataSource.sharedInstance.postAPic()
         
         
         

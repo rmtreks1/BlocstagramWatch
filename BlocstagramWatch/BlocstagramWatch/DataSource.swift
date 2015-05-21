@@ -30,6 +30,8 @@ class DataSource: NSObject {
     var postsPerDay: Int?
     var timeBetweenPosts: Int?
     var remindToPost: Bool = false
+    var postsToday: Int?
+    var lastPostDate: NSDate?
     
     
     
@@ -41,6 +43,40 @@ class DataSource: NSObject {
     }
     
 
+    
+    override init(){
+        super.init()
+        retrieveSettings()
+    }
+    
+    
+    func retrieveSettings(){
+        println("retrieving settings")
+        
+        let settings = NSUserDefaults.standardUserDefaults()
+        self.postsPerDay = settings.integerForKey("postsPerDay")
+        self.remindToPost = settings.boolForKey("remindToPost")
+        self.timeBetweenPosts = settings.integerForKey("timeBetweenPosts")
+        self.postsToday = settings.integerForKey("postsToday")
+        self.lastPostDate = settings.valueForKey("lastPostDate") as? NSDate
+        
+        
+//        if let tempPostsPerDay = settings.integerForKey("postsPerDay"){
+//            self.postsPerDay = tempPostsPerDay
+//        }
+//        
+//        if let tempRemindToPost = settings.boolForKey("remindToPost"){
+//            self.remindToPost = tempRemindToPost
+//        }
+//
+//        if let tempTimeBetweenPosts = settings.integerForKey("timeBetweenPosts"){
+//            self.timeBetweenPosts = tempTimeBetweenPosts
+//        }
+        
+        
+    }
+    
+    
     
     
     func retrieveDataFromInsta(successBlock: Void -> Void){
@@ -183,11 +219,19 @@ class DataSource: NSObject {
     
     
     
-    func savePostingPreferences(){
+    func saveSettings(){
         let settings = NSUserDefaults.standardUserDefaults()
         settings.setInteger(postsPerDay!, forKey: "postsPerDay")
         settings.setInteger(timeBetweenPosts!, forKey: "timeBetweenPosts")
         settings.setBool(remindToPost, forKey: "remindToPost")
+        
+        if let postsDoneToday = self.postsToday {
+            settings.setInteger(postsDoneToday, forKey: "postsToday")
+        }
+        
+        if let postDate = self.lastPostDate {
+            settings.setValue(postDate, forKey: "lastPostDate")
+        }
     }
     
     
@@ -211,5 +255,34 @@ class DataSource: NSObject {
     }
     
     
+    // MARK: - Posts
+    
+    func postAPic(){
+        // there is a postDate
+        if let postDate = self.lastPostDate{
+            // check if its today
+            if NSCalendar.currentCalendar().isDateInToday(postDate){
+            // if yes then increment the post count
+                if let postsCount = self.postsToday{
+                    self.postsToday! += 1
+                } else {
+                    self.postsToday = 1
+                }
+                
+            } else{
+                // if not then replace the date
+                // and reset the post count
+                self.lastPostDate = NSDate()
+                self.postsToday = 1
+            }
+        } else {
+            println("no current post date")
+            self.lastPostDate = NSDate() // if the date is currently nil then set it to now
+            self.postsToday = 1
+        }
+        
+        println("posts taken today \(self.postsToday)")
+        
+    }
     
 }

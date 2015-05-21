@@ -112,7 +112,7 @@ class SettingsViewController: UIViewController {
         DataSource.sharedInstance.postsPerDay = Int(self.postsPerDaySlider.value)
         DataSource.sharedInstance.remindToPost = self.notificationsSwitch.on
         DataSource.sharedInstance.scheduleNotifications()
-        DataSource.sharedInstance.savePostingPreferences()
+        DataSource.sharedInstance.saveSettings()
     }
     
     
@@ -128,17 +128,18 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Saved Settings
     func retrieveSavedSettings(){
-        let settings = NSUserDefaults.standardUserDefaults()
-        let settingsPosts = settings.integerForKey("postsPerDay")
-        self.postsPerDaySlider.value = Float(settingsPosts)
-        self.postPerDayLabel.text = String(settingsPosts)
+//        let settings = NSUserDefaults.standardUserDefaults()
+//        let settingsPosts = settings.integerForKey("postsPerDay")
         
-        self.notificationsSwitch.on = settings.boolForKey("remindToPost")
+        self.postsPerDaySlider.value = Float(DataSource.sharedInstance.postsPerDay!)
+        self.postPerDayLabel.text = String(DataSource.sharedInstance.postsPerDay!)
+        
+        self.notificationsSwitch.on = DataSource.sharedInstance.remindToPost
         
         
-        let postInterval = settings.integerForKey("timeBetweenPosts")
-        self.timeBetweenPostsSlider.value = Float(postInterval)
-        self.timeBetweenPostsLabel.text = String(postInterval)
+//        let postInterval = settings.integerForKey("timeBetweenPosts")
+        self.timeBetweenPostsSlider.value = Float(DataSource.sharedInstance.timeBetweenPosts!)
+        self.timeBetweenPostsLabel.text = String(DataSource.sharedInstance.timeBetweenPosts!)
         
     }
 
