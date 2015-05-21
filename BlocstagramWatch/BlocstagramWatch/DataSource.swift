@@ -189,6 +189,8 @@ class DataSource: NSObject {
     func scheduleNotifications(){
         println("*** scheduling notifications ***")
         
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
         for i in 1...self.postsPerDay!{
             println("creating notification")
             let localNotification:UILocalNotification = UILocalNotification()
@@ -225,7 +227,6 @@ class DataSource: NSObject {
     
     func lookForNotificationsTodayButAfterNow() -> (todaysNotifications:[UILocalNotification], otherNotifications:[UILocalNotification]){
         let localnotifications = UIApplication.sharedApplication().scheduledLocalNotifications
-        println(localnotifications)
         
         var todaysNotifications: [UILocalNotification] = []
         var otherNotifications: [UILocalNotification] = []
@@ -296,7 +297,7 @@ class DataSource: NSObject {
             for i in 0...notificationsToReschedule-1 {
                 let tempNotification = notificationsLeftForToday[i]
                 let currentFireDate = tempNotification.fireDate
-
+                
                 
                 let newFireDate = NSCalendar.currentCalendar().dateByAddingUnit(
                     .CalendarUnitDay,
@@ -313,9 +314,6 @@ class DataSource: NSObject {
             
             UIApplication.sharedApplication().scheduledLocalNotifications = newScheduledNotifications
         }
-        
-        
-        
     }
     
     

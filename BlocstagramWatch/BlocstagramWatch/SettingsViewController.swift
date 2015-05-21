@@ -24,7 +24,6 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         if !notificationsSwitch.on {
-            println("switch is off")
            self.postsSchedulingView.hidden = true
         } else {
             self.postsSchedulingView.hidden = false
@@ -87,7 +86,7 @@ class SettingsViewController: UIViewController {
     
     
     func registerForNotifications(){
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))  // types are UIUserNotificationType members
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))
     }
     
     
@@ -118,7 +117,7 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func findNotificationsForRestOfToday(sender: UIButton) {
-        DataSource.sharedInstance.lookForNotificationsTodayButAfterNow()
+        println("today's notifications:\(DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().todaysNotifications.count) out of \(DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().todaysNotifications.count + DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().otherNotifications.count) ")
     }
     
     
@@ -128,16 +127,9 @@ class SettingsViewController: UIViewController {
     
     // MARK: - Saved Settings
     func retrieveSavedSettings(){
-//        let settings = NSUserDefaults.standardUserDefaults()
-//        let settingsPosts = settings.integerForKey("postsPerDay")
-        
+        self.notificationsSwitch.on = DataSource.sharedInstance.remindToPost
         self.postsPerDaySlider.value = Float(DataSource.sharedInstance.postsPerDay!)
         self.postPerDayLabel.text = String(DataSource.sharedInstance.postsPerDay!)
-        
-        self.notificationsSwitch.on = DataSource.sharedInstance.remindToPost
-        
-        
-//        let postInterval = settings.integerForKey("timeBetweenPosts")
         self.timeBetweenPostsSlider.value = Float(DataSource.sharedInstance.timeBetweenPosts!)
         self.timeBetweenPostsLabel.text = String(DataSource.sharedInstance.timeBetweenPosts!)
         
