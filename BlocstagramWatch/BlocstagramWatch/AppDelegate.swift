@@ -59,6 +59,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    
+    
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        
+        // 1
+        if let userInfo = userInfo, request = userInfo["request"] as? String {
+            if request == "refreshData" {
+                // 2
+                let postsLeft = max(0,DataSource.sharedInstance.postsPerDay! - DataSource.sharedInstance.postsToday!)
+                println("posts left according to ios app \(postsLeft)")
+                
+                
+                
+                // 3
+                reply(["postsLeft": postsLeft])
+                return
+            }
+        }
+        
+        // 4
+        reply([:])
+    }
+    
    
 
 }
