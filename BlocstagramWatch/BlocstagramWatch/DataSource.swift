@@ -226,6 +226,10 @@ class DataSource: NSObject {
     
     func disableAllNotifications(){
         UIApplication.sharedApplication().cancelAllLocalNotifications()
+        self.postsPerDay = 0
+        self.timeBetweenPosts = 0
+        self.remindToPost = false
+        saveSettings()
     }
     
     

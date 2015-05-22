@@ -37,6 +37,8 @@ class SettingsViewController: UIViewController {
         // save settings on exit from view
         if self.notificationsSwitch.on {
             scheduleTheNotifications()
+        } else {
+            DataSource.sharedInstance.disableAllNotifications()
         }
     }
     
@@ -92,7 +94,7 @@ class SettingsViewController: UIViewController {
         } else {
             println("swithc is off")
             self.postsSchedulingView.hidden = true
-            DataSource.sharedInstance.disableAllNotifications()
+//            DataSource.sharedInstance.disableAllNotifications()
         }
     }
 
@@ -117,17 +119,6 @@ class SettingsViewController: UIViewController {
         let timeBetweenPosts = Int(sender.value)
         self.timeBetweenPostsLabel.text = String(timeBetweenPosts)
         DataSource.sharedInstance.timeBetweenPosts = timeBetweenPosts
-    }
-    
-    
-    
-    @IBAction func scheduleNotifications(sender: UIButton) {
-        scheduleTheNotifications()
-//        DataSource.sharedInstance.timeBetweenPosts = Int(self.timeBetweenPostsSlider.value)
-//        DataSource.sharedInstance.postsPerDay = Int(self.postsPerDaySlider.value)
-//        DataSource.sharedInstance.remindToPost = self.notificationsSwitch.on
-//        DataSource.sharedInstance.scheduleNotifications()
-//        DataSource.sharedInstance.saveSettings()
     }
     
     
