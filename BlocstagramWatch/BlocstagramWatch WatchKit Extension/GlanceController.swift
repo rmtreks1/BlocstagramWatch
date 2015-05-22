@@ -44,8 +44,8 @@ class GlanceController: WKInterfaceController {
         GlanceController.openParentApplication(["request": "refreshData"], reply: { (replyInfo, error) -> Void in
             // TODO: process reply data
             //            NSLog("Reply: \(replyInfo)")
-            let postsLeft = replyInfo["postsLeft"] as! Int
-            self.testLabel.setText(String(postsLeft))
+            let postsLeft = String(replyInfo["postsLeft"] as! Int)
+            self.testLabel.setText("\(postsLeft) left")
             
             let progressImageName = replyInfo["progressImage"] as! String
             self.progressImage.setImageNamed(progressImageName)

@@ -70,10 +70,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let postsLeft = max(0,DataSource.sharedInstance.postsPerDay! - DataSource.sharedInstance.postsToday!)
                 println("posts left according to ios app \(postsLeft)")
                 
+                let progress = min(1,Float(DataSource.sharedInstance.postsToday!)/Float(DataSource.sharedInstance.postsPerDay!))
+                let progressIn44 = Int(progress * 44)
+                println(progressIn44)
+                
+                let progressImage = "glance-\(progressIn44)" as String
                 
                 
                 // 3
-                reply(["postsLeft": postsLeft,"progressImage":"glance-20"])
+                reply(["postsLeft": postsLeft,"progressImage":progressImage])
                 return
             }
         }
