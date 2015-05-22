@@ -29,7 +29,6 @@ class GlanceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         refreshPostsLeftCount()
-//        refreshPostsProgress()
         
     }
 
@@ -52,9 +51,5 @@ class GlanceController: WKInterfaceController {
         })
     }
     
-    
-    func refreshPostsProgress(){
-        self.progressImage.setImageNamed("glance-40")
-    }
-
+   
 }
