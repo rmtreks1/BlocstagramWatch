@@ -75,7 +75,7 @@ class SettingsViewController: UIViewController {
     @IBAction func notificationOptionChanged(sender: UISwitch) {
         if sender.on {
             println("switch is on")
-            self.registerForNotifications()
+            DataSource.sharedInstance.registerForNotifications()
             self.postsSchedulingView.hidden = false
         } else {
             println("swithc is off")
@@ -85,9 +85,6 @@ class SettingsViewController: UIViewController {
 
     
     
-    func registerForNotifications(){
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))
-    }
     
     
     

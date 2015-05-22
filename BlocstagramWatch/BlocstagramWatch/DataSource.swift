@@ -186,6 +186,15 @@ class DataSource: NSObject {
     
     // MARK: - Notifications
     
+    
+    func registerForNotifications(){
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Badge | .Sound, categories: nil))
+    }
+
+    
+    
+    
+    
     func scheduleNotifications(){
         println("*** scheduling notifications ***")
         
