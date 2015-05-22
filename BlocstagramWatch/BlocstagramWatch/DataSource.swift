@@ -224,6 +224,9 @@ class DataSource: NSObject {
     }
 
     
+    func disableAllNotifications(){
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+    }
     
     
     
@@ -238,7 +241,7 @@ class DataSource: NSObject {
             localNotification.alertAction = "Post to Instagram"
             localNotification.alertBody = "Reach your publishing goal. Post to Instagram now."
             localNotification.repeatInterval = NSCalendarUnit.CalendarUnitDay
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: Double(self.timeBetweenPosts!*i*10))
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: Double(self.timeBetweenPosts!*i*60))
             localNotification.category = "POST_CATEGORY"
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         }

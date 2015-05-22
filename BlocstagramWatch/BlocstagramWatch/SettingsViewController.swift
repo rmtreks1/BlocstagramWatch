@@ -29,6 +29,17 @@ class SettingsViewController: UIViewController {
             self.postsSchedulingView.hidden = false
         }
     }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        println("view will disappear")
+        // save settings on exit from view
+        if self.notificationsSwitch.on {
+            scheduleTheNotifications()
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -75,16 +86,23 @@ class SettingsViewController: UIViewController {
     @IBAction func notificationOptionChanged(sender: UISwitch) {
         if sender.on {
             println("switch is on")
+            setDefaultValues()
             DataSource.sharedInstance.registerForNotifications()
             self.postsSchedulingView.hidden = false
         } else {
             println("swithc is off")
             self.postsSchedulingView.hidden = true
+            DataSource.sharedInstance.disableAllNotifications()
         }
     }
 
     
-    
+    func setDefaultValues(){
+        self.postPerDayLabel.text = String(1)
+        self.postsPerDaySlider.value = Float(1)
+        self.timeBetweenPostsLabel.text = String(5)
+        self.timeBetweenPostsSlider.value = Float(5)
+    }
     
     
     
@@ -104,6 +122,16 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func scheduleNotifications(sender: UIButton) {
+        scheduleTheNotifications()
+//        DataSource.sharedInstance.timeBetweenPosts = Int(self.timeBetweenPostsSlider.value)
+//        DataSource.sharedInstance.postsPerDay = Int(self.postsPerDaySlider.value)
+//        DataSource.sharedInstance.remindToPost = self.notificationsSwitch.on
+//        DataSource.sharedInstance.scheduleNotifications()
+//        DataSource.sharedInstance.saveSettings()
+    }
+    
+    
+    func scheduleTheNotifications(){
         DataSource.sharedInstance.timeBetweenPosts = Int(self.timeBetweenPostsSlider.value)
         DataSource.sharedInstance.postsPerDay = Int(self.postsPerDaySlider.value)
         DataSource.sharedInstance.remindToPost = self.notificationsSwitch.on
@@ -113,9 +141,12 @@ class SettingsViewController: UIViewController {
     
     
     
-    @IBAction func findNotificationsForRestOfToday(sender: UIButton) {
-        println("today's notifications:\(DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().todaysNotifications.count) out of \(DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().todaysNotifications.count + DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().otherNotifications.count) ")
-    }
+    
+    
+   // test function
+//    @IBAction func findNotificationsForRestOfToday(sender: UIButton) {
+//        println("today's notifications:\(DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().todaysNotifications.count) out of \(DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().todaysNotifications.count + DataSource.sharedInstance.lookForNotificationsTodayButAfterNow().otherNotifications.count) ")
+//    }
     
     
     
