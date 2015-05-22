@@ -21,10 +21,25 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="BlocstagramWatch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="left" text="BlocSta Posts" id="0F3-RL-bn0">
+                                    <color key="textColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <imageView alignment="left" id="IHD-Zs-BwD"/>
+                                <label alignment="left" verticalAlignment="bottom" text="Label" id="dXu-1D-1We"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="progressImage" destination="IHD-Zs-BwD" id="NeC-tw-I3E"/>
+                        <outlet property="testLabel" destination="dXu-1D-1We" id="W7e-DS-vLF"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>

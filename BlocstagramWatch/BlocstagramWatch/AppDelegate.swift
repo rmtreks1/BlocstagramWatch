@@ -59,6 +59,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    
+    
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        
+        
+        if let userInfo = userInfo, request = userInfo["request"] as? String {
+            if request == "refreshData" {
+
+                let postsLeft = max(0,DataSource.sharedInstance.postsPerDay! - DataSource.sharedInstance.postsToday!)
+                println("posts left according to ios app \(postsLeft)")
+                
+                let progress = min(1,Float(DataSource.sharedInstance.postsToday!)/Float(DataSource.sharedInstance.postsPerDay!))
+                
+                // converting to base 44, as the watch app has 44 images to show progress circle
+                let progressIn44 = Int(progress * 44)
+                println(progressIn44)
+                
+                let progressImage = "glance-\(progressIn44)" as String
+                
+                reply(["postsLeft": postsLeft,"progressImage":progressImage])
+                return
+            }
+        }
+        
+        reply([:])
+    }
+    
    
 
 }
