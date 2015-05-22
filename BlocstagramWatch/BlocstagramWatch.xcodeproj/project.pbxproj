@@ -16,7 +16,16 @@
 		01AB22FA1B02D33000707D5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AB22F81B02D33000707D5D /* LaunchScreen.xib */; };
 		01AB23061B02D33000707D5D /* BlocstagramWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23051B02D33000707D5D /* BlocstagramWatchTests.swift */; };
 		01AB23121B02E32300707D5D /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23111B02E32300707D5D /* PostsTableViewCell.swift */; };
+		01CEBFCC1B0D4194007B5458 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEBFCB1B0D4194007B5458 /* InterfaceController.swift */; };
+		01CEBFCE1B0D4194007B5458 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEBFCD1B0D4194007B5458 /* NotificationController.swift */; };
+		01CEBFD01B0D4194007B5458 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CEBFCF1B0D4194007B5458 /* GlanceController.swift */; };
+		01CEBFD21B0D4194007B5458 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CEBFD11B0D4194007B5458 /* Images.xcassets */; };
+		01CEBFD61B0D4194007B5458 /* BlocstagramWatch WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 01CEBFD51B0D4194007B5458 /* BlocstagramWatch WatchKit App.app */; };
+		01CEBFDE1B0D4194007B5458 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CEBFDC1B0D4194007B5458 /* Interface.storyboard */; };
+		01CEBFE01B0D4194007B5458 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CEBFDF1B0D4194007B5458 /* Images.xcassets */; };
+		01CEBFE31B0D4194007B5458 /* BlocstagramWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 01CEBFC61B0D4194007B5458 /* BlocstagramWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		01D30AD21B05E40E00B34936 /* TestImage.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 01D30AD11B05E40E00B34936 /* TestImage.JPG */; };
+		01EFBF321B0CB0C2008AA7AC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EFBF311B0CB0C2008AA7AC /* SettingsViewController.swift */; };
 		01F8783D1B032471004DC14A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F8783C1B032471004DC14A /* User.swift */; };
 		01F8783F1B0324F3004DC14A /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F8783E1B0324F3004DC14A /* Media.swift */; };
 		01F878411B032585004DC14A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F878401B032585004DC14A /* Comment.swift */; };
@@ -35,7 +44,35 @@
 			remoteGlobalIDString = 01AB22E91B02D33000707D5D;
 			remoteInfo = BlocstagramWatch;
 		};
+		01CEBFD71B0D4194007B5458 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01AB22E21B02D33000707D5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01CEBFD41B0D4194007B5458;
+			remoteInfo = "BlocstagramWatch WatchKit App";
+		};
+		01CEBFE11B0D4194007B5458 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01AB22E21B02D33000707D5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01CEBFC51B0D4194007B5458;
+			remoteInfo = "BlocstagramWatch WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		01CEBFEA1B0D4194007B5458 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				01CEBFE31B0D4194007B5458 /* BlocstagramWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaLoginViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +88,19 @@
 		01AB23041B02D33000707D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AB23051B02D33000707D5D /* BlocstagramWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocstagramWatchTests.swift; sourceTree = "<group>"; };
 		01AB23111B02E32300707D5D /* PostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		01CEBFC61B0D4194007B5458 /* BlocstagramWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BlocstagramWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CEBFC91B0D4194007B5458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01CEBFCA1B0D4194007B5458 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		01CEBFCB1B0D4194007B5458 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		01CEBFCD1B0D4194007B5458 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		01CEBFCF1B0D4194007B5458 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		01CEBFD11B0D4194007B5458 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		01CEBFD51B0D4194007B5458 /* BlocstagramWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlocstagramWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CEBFDB1B0D4194007B5458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01CEBFDD1B0D4194007B5458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		01CEBFDF1B0D4194007B5458 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		01D30AD11B05E40E00B34936 /* TestImage.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TestImage.JPG; sourceTree = "<group>"; };
+		01EFBF311B0CB0C2008AA7AC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		01F8783C1B032471004DC14A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		01F8783E1B0324F3004DC14A /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		01F878401B032585004DC14A /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -80,6 +129,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		01CEBFC31B0D4194007B5458 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +144,8 @@
 			children = (
 				01AB22EC1B02D33000707D5D /* BlocstagramWatch */,
 				01AB23021B02D33000707D5D /* BlocstagramWatchTests */,
+				01CEBFC71B0D4194007B5458 /* BlocstagramWatch WatchKit Extension */,
+				01CEBFD91B0D4194007B5458 /* BlocstagramWatch WatchKit App */,
 				01AB22EB1B02D33000707D5D /* Products */,
 				9D7281DD9836802F9392E7CB /* Pods */,
 				D160FD94F460C940FE2BF577 /* Frameworks */,
@@ -99,6 +157,8 @@
 			children = (
 				01AB22EA1B02D33000707D5D /* BlocstagramWatch.app */,
 				01AB22FF1B02D33000707D5D /* BlocstagramWatchTests.xctest */,
+				01CEBFC61B0D4194007B5458 /* BlocstagramWatch WatchKit Extension.appex */,
+				01CEBFD51B0D4194007B5458 /* BlocstagramWatch WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +183,7 @@
 				01F878421B0325E5004DC14A /* DataSource.swift */,
 				014766851B03366E00248B0D /* OldLoginViewController.swift */,
 				013C6B971B034DF0006D6B8E /* InstaLoginViewController.swift */,
+				01EFBF311B0CB0C2008AA7AC /* SettingsViewController.swift */,
 			);
 			path = BlocstagramWatch;
 			sourceTree = "<group>";
@@ -148,6 +209,45 @@
 			isa = PBXGroup;
 			children = (
 				01AB23041B02D33000707D5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01CEBFC71B0D4194007B5458 /* BlocstagramWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				01CEBFCB1B0D4194007B5458 /* InterfaceController.swift */,
+				01CEBFCD1B0D4194007B5458 /* NotificationController.swift */,
+				01CEBFCF1B0D4194007B5458 /* GlanceController.swift */,
+				01CEBFD11B0D4194007B5458 /* Images.xcassets */,
+				01CEBFC81B0D4194007B5458 /* Supporting Files */,
+			);
+			path = "BlocstagramWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		01CEBFC81B0D4194007B5458 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01CEBFC91B0D4194007B5458 /* Info.plist */,
+				01CEBFCA1B0D4194007B5458 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01CEBFD91B0D4194007B5458 /* BlocstagramWatch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				01CEBFDC1B0D4194007B5458 /* Interface.storyboard */,
+				01CEBFDF1B0D4194007B5458 /* Images.xcassets */,
+				01CEBFDA1B0D4194007B5458 /* Supporting Files */,
+			);
+			path = "BlocstagramWatch WatchKit App";
+			sourceTree = "<group>";
+		};
+		01CEBFDA1B0D4194007B5458 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01CEBFDB1B0D4194007B5458 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,10 +282,12 @@
 				01AB22E81B02D33000707D5D /* Resources */,
 				1D1084AE8E9AF27147EB59DB /* Embed Pods Frameworks */,
 				A8010ACA3EA6366522F328FB /* Copy Pods Resources */,
+				01CEBFEA1B0D4194007B5458 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				01CEBFE21B0D4194007B5458 /* PBXTargetDependency */,
 			);
 			name = BlocstagramWatch;
 			productName = BlocstagramWatch;
@@ -210,6 +312,39 @@
 			productReference = 01AB22FF1B02D33000707D5D /* BlocstagramWatchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		01CEBFC51B0D4194007B5458 /* BlocstagramWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01CEBFE91B0D4194007B5458 /* Build configuration list for PBXNativeTarget "BlocstagramWatch WatchKit Extension" */;
+			buildPhases = (
+				01CEBFC21B0D4194007B5458 /* Sources */,
+				01CEBFC31B0D4194007B5458 /* Frameworks */,
+				01CEBFC41B0D4194007B5458 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01CEBFD81B0D4194007B5458 /* PBXTargetDependency */,
+			);
+			name = "BlocstagramWatch WatchKit Extension";
+			productName = "BlocstagramWatch WatchKit Extension";
+			productReference = 01CEBFC61B0D4194007B5458 /* BlocstagramWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		01CEBFD41B0D4194007B5458 /* BlocstagramWatch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01CEBFE81B0D4194007B5458 /* Build configuration list for PBXNativeTarget "BlocstagramWatch WatchKit App" */;
+			buildPhases = (
+				01CEBFD31B0D4194007B5458 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BlocstagramWatch WatchKit App";
+			productName = "BlocstagramWatch WatchKit App";
+			productReference = 01CEBFD51B0D4194007B5458 /* BlocstagramWatch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +361,14 @@
 					01AB22FE1B02D33000707D5D = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 01AB22E91B02D33000707D5D;
+					};
+					01CEBFC51B0D4194007B5458 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = G57C959K73;
+					};
+					01CEBFD41B0D4194007B5458 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = G57C959K73;
 					};
 				};
 			};
@@ -244,6 +387,8 @@
 			targets = (
 				01AB22E91B02D33000707D5D /* BlocstagramWatch */,
 				01AB22FE1B02D33000707D5D /* BlocstagramWatchTests */,
+				01CEBFC51B0D4194007B5458 /* BlocstagramWatch WatchKit Extension */,
+				01CEBFD41B0D4194007B5458 /* BlocstagramWatch WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +410,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01CEBFC41B0D4194007B5458 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CEBFD61B0D4194007B5458 /* BlocstagramWatch WatchKit App.app in Resources */,
+				01CEBFD21B0D4194007B5458 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01CEBFD31B0D4194007B5458 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CEBFDE1B0D4194007B5458 /* Interface.storyboard in Resources */,
+				01CEBFE01B0D4194007B5458 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +497,7 @@
 				01AB22F21B02D33000707D5D /* ViewController.swift in Sources */,
 				014766861B03366E00248B0D /* OldLoginViewController.swift in Sources */,
 				01AB22F01B02D33000707D5D /* AppDelegate.swift in Sources */,
+				01EFBF321B0CB0C2008AA7AC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +509,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		01CEBFC21B0D4194007B5458 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01CEBFCE1B0D4194007B5458 /* NotificationController.swift in Sources */,
+				01CEBFCC1B0D4194007B5458 /* InterfaceController.swift in Sources */,
+				01CEBFD01B0D4194007B5458 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -352,6 +526,16 @@
 			isa = PBXTargetDependency;
 			target = 01AB22E91B02D33000707D5D /* BlocstagramWatch */;
 			targetProxy = 01AB23001B02D33000707D5D /* PBXContainerItemProxy */;
+		};
+		01CEBFD81B0D4194007B5458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01CEBFD41B0D4194007B5458 /* BlocstagramWatch WatchKit App */;
+			targetProxy = 01CEBFD71B0D4194007B5458 /* PBXContainerItemProxy */;
+		};
+		01CEBFE21B0D4194007B5458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01CEBFC51B0D4194007B5458 /* BlocstagramWatch WatchKit Extension */;
+			targetProxy = 01CEBFE11B0D4194007B5458 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -370,6 +554,14 @@
 				01AB22F91B02D33000707D5D /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		01CEBFDC1B0D4194007B5458 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01CEBFDD1B0D4194007B5458 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -514,6 +706,70 @@
 			};
 			name = Release;
 		};
+		01CEBFE41B0D4194007B5458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BlocstagramWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		01CEBFE51B0D4194007B5458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "BlocstagramWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		01CEBFE61B0D4194007B5458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = BlocstagramWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "BlocstagramWatch WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		01CEBFE71B0D4194007B5458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = BlocstagramWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "BlocstagramWatch WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -540,6 +796,24 @@
 			buildConfigurations = (
 				01AB230D1B02D33000707D5D /* Debug */,
 				01AB230E1B02D33000707D5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01CEBFE81B0D4194007B5458 /* Build configuration list for PBXNativeTarget "BlocstagramWatch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01CEBFE61B0D4194007B5458 /* Debug */,
+				01CEBFE71B0D4194007B5458 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01CEBFE91B0D4194007B5458 /* Build configuration list for PBXNativeTarget "BlocstagramWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01CEBFE41B0D4194007B5458 /* Debug */,
+				01CEBFE51B0D4194007B5458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
