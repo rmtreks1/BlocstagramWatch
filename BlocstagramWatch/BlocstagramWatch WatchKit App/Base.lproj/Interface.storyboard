@@ -24,12 +24,14 @@
                         <group alignment="left" id="t8f-Gd-c4y"/>
                         <group alignment="left" id="uCw-4Q-Ouw">
                             <items>
-                                <label alignment="left" text="Label" id="dXu-1D-1We"/>
+                                <imageView alignment="left" id="IHD-Zs-BwD"/>
+                                <label alignment="left" verticalAlignment="bottom" text="Label" id="dXu-1D-1We"/>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
+                        <outlet property="progressImage" destination="IHD-Zs-BwD" id="NeC-tw-I3E"/>
                         <outlet property="testLabel" destination="dXu-1D-1We" id="W7e-DS-vLF"/>
                     </connections>
                 </glanceController>

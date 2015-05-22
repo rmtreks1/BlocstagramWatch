@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 
                 // 3
-                reply(["postsLeft": postsLeft])
+                reply(["postsLeft": postsLeft,"progressImage":"glance-20"])
                 return
             }
         }

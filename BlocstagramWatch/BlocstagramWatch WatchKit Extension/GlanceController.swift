@@ -13,6 +13,7 @@ import Foundation
 class GlanceController: WKInterfaceController {
 
     @IBOutlet var testLabel: WKInterfaceLabel!
+    @IBOutlet var progressImage: WKInterfaceImage!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -27,12 +28,8 @@ class GlanceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        GlanceController.openParentApplication(["request": "refreshData"], reply: { (replyInfo, error) -> Void in
-            // TODO: process reply data
-            //            NSLog("Reply: \(replyInfo)")
-            let postsLeft = replyInfo["postsLeft"] as! Int
-            self.testLabel.setText(String(postsLeft))
-        })
+        refreshPostsLeftCount()
+//        refreshPostsProgress()
         
     }
 
@@ -42,5 +39,22 @@ class GlanceController: WKInterfaceController {
     }
     
     
+    
+    func refreshPostsLeftCount(){
+        GlanceController.openParentApplication(["request": "refreshData"], reply: { (replyInfo, error) -> Void in
+            // TODO: process reply data
+            //            NSLog("Reply: \(replyInfo)")
+            let postsLeft = replyInfo["postsLeft"] as! Int
+            self.testLabel.setText(String(postsLeft))
+            
+            let progressImageName = replyInfo["progressImage"] as! String
+            self.progressImage.setImageNamed(progressImageName)
+        })
+    }
+    
+    
+    func refreshPostsProgress(){
+        self.progressImage.setImageNamed("glance-40")
+    }
 
 }
